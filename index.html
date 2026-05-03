@@ -16,18 +16,15 @@
         padding: 0;
         box-sizing: border-box;
       }
-
       html {
         scroll-behavior: smooth;
       }
-
       body {
         font-family: "Inter", sans-serif;
         background: #020617;
         color: #e2e8f0;
       }
 
-      /* SCROLL PROGRESS BAR */
       #progress {
         position: fixed;
         top: 0;
@@ -46,7 +43,6 @@
         z-index: -1;
       }
 
-      /* NAVBAR */
       nav {
         position: fixed;
         width: 100%;
@@ -68,7 +64,6 @@
         filter: drop-shadow(0 0 10px #3b82f6) drop-shadow(0 0 15px #ef4444);
         transition: 0.3s;
       }
-
       .logo:hover {
         transform: scale(1.05);
       }
@@ -83,7 +78,6 @@
         color: #3b82f6;
       }
 
-      /* HERO */
       .hero {
         height: 100vh;
         display: flex;
@@ -102,11 +96,9 @@
         padding: 0 20px;
         text-shadow: 0 0 20px #3b82f6;
       }
-
       .hero span {
         color: #ef4444;
       }
-
       .hero p {
         margin-top: 10px;
         color: #94a3b8;
@@ -124,7 +116,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .btn::after {
         content: "";
         position: absolute;
@@ -139,30 +130,25 @@
           width 0.5s,
           height 0.5s;
       }
-
       .btn:active::after {
         width: 200px;
         height: 200px;
       }
-
       .btn:hover {
         transform: scale(1.08);
       }
 
-      /* SECTION */
       .section {
         padding: 100px 40px;
         max-width: 1200px;
         margin: auto;
       }
-
       .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
       }
 
-      /* CARDS */
       .card {
         padding: 25px;
         border-radius: 12px;
@@ -170,13 +156,19 @@
         border: 1px solid #1e293b;
         transition: 0.4s;
       }
-
       .card:hover {
         transform: translateY(-12px) scale(1.03);
         border-color: #3b82f6;
         box-shadow:
           0 0 15px #3b82f6,
           0 0 25px #ef4444;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 25px;
+        margin-top: 10px;
       }
 
       .product-card {
@@ -186,23 +178,76 @@
         border: 1px solid #1e293b;
         text-align: center;
         transition: 0.4s;
+        position: relative;
+        overflow: hidden;
       }
-
+      .product-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #3b82f6, #ef4444);
+      }
       .product-card h3 {
+        font-family: "Orbitron";
+        font-size: 1rem;
         margin-bottom: 10px;
+        color: #e2e8f0;
       }
-
-      .product-card p {
+      .product-card .specs {
         color: #94a3b8;
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        line-height: 1.6;
       }
-
-      .price {
+      .product-card .condition {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin-bottom: 12px;
+        background: rgba(59, 130, 246, 0.15);
+        border: 1px solid #3b82f6;
+        color: #3b82f6;
+      }
+      .product-card .price {
         font-size: 1.5rem;
         color: #ef4444;
         margin: 10px 0;
         font-weight: bold;
+        font-family: "Orbitron";
       }
-
+      .product-card .badge {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: #ef4444;
+        color: white;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 3px 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .product-card .enquire-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background: linear-gradient(90deg, #3b82f6, #ef4444);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.85rem;
+        transition: 0.3s;
+      }
+      .product-card .enquire-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px #3b82f6;
+      }
       .product-card:hover {
         transform: translateY(-10px) scale(1.03);
         border-color: #3b82f6;
@@ -211,7 +256,26 @@
           0 0 25px #ef4444;
       }
 
-      /* DIVIDER */
+      .laptops-status {
+        text-align: center;
+        color: #94a3b8;
+        padding: 40px 0;
+      }
+      .laptops-status .spinner {
+        width: 36px;
+        height: 36px;
+        border: 3px solid #1e293b;
+        border-top-color: #3b82f6;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin: 0 auto 15px;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
       .divider {
         height: 2px;
         background: linear-gradient(
@@ -224,12 +288,10 @@
         margin: 40px 0;
       }
 
-      /* CONTACT */
       .contact p {
         margin: 10px 0;
       }
 
-      /* WHATSAPP BUTTON */
       .whatsapp {
         position: fixed;
         bottom: 20px;
@@ -244,7 +306,6 @@
         animation: pulse 2s infinite;
       }
 
-      /* SCROLL ANIMATION */
       .hidden {
         opacity: 0;
         transform: translateY(40px);
@@ -261,7 +322,6 @@
           transform: translateY(0) scale(1);
         }
       }
-
       @keyframes navFade {
         from {
           opacity: 0;
@@ -273,7 +333,6 @@
         }
       }
 
-      /* LOADER */
       #loader {
         position: fixed;
         width: 100%;
@@ -286,7 +345,6 @@
         z-index: 9999;
         animation: fadeOut 1s ease 3s forwards;
       }
-
       .loader-logo {
         width: 120px;
         margin-bottom: 20px;
@@ -295,7 +353,6 @@
           glowPulse 2s ease-in-out infinite alternate;
         filter: drop-shadow(0 0 15px #3b82f6) drop-shadow(0 0 25px #ef4444);
       }
-
       #loader h1 {
         font-family: "Orbitron";
         color: white;
@@ -307,16 +364,13 @@
           textGlow 2s ease-in-out infinite alternate;
         margin-bottom: 30px;
       }
-
       .loader-progress {
         width: 200px;
         height: 4px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 2px;
         overflow: hidden;
-        position: relative;
       }
-
       .loader-progress-bar {
         height: 100%;
         background: linear-gradient(90deg, #3b82f6, #ef4444);
@@ -325,19 +379,15 @@
         border-radius: 2px;
       }
 
-      /* ANIMATIONS */
       @keyframes pulseLogo {
-        0% {
+        0%,
+        100% {
           transform: scale(1);
         }
         50% {
           transform: scale(1.1);
         }
-        100% {
-          transform: scale(1);
-        }
       }
-
       @keyframes glowPulse {
         from {
           filter: drop-shadow(0 0 15px #3b82f6) drop-shadow(0 0 25px #ef4444);
@@ -346,7 +396,6 @@
           filter: drop-shadow(0 0 25px #3b82f6) drop-shadow(0 0 40px #ef4444);
         }
       }
-
       @keyframes textGlow {
         from {
           text-shadow: 0 0 10px #3b82f6;
@@ -357,7 +406,6 @@
             0 0 30px #ef4444;
         }
       }
-
       @keyframes fadeText {
         from {
           opacity: 0;
@@ -368,7 +416,6 @@
           transform: translateY(0);
         }
       }
-
       @keyframes loadProgress {
         0% {
           width: 0%;
@@ -380,23 +427,19 @@
           width: 100%;
         }
       }
-
       @keyframes fadeOut {
         to {
           opacity: 0;
           visibility: hidden;
         }
       }
-
       @keyframes pulse {
-        0% {
+        0%,
+        100% {
           box-shadow: 0 0 10px #25d366;
         }
         50% {
           box-shadow: 0 0 25px #25d366;
-        }
-        100% {
-          box-shadow: 0 0 10px #25d366;
         }
       }
 
@@ -404,18 +447,15 @@
         max-width: 500px;
         margin: auto;
       }
-
       .form-group {
         margin-bottom: 15px;
       }
-
       .form-group label {
         display: block;
         margin-bottom: 5px;
         font-size: 0.9rem;
         color: #94a3b8;
       }
-
       .booking-form input,
       .booking-form select,
       .booking-form textarea {
@@ -428,27 +468,23 @@
         outline: none;
         transition: 0.3s;
       }
-
       .booking-form input:focus,
       .booking-form select:focus,
       .booking-form textarea:focus {
         border-color: #3b82f6;
         box-shadow: 0 0 10px #3b82f6;
       }
-
       .booking-form textarea {
         min-height: 100px;
         resize: none;
       }
 
-      /* MOBILE NAV */
       .hamburger {
         display: none;
         flex-direction: column;
         cursor: pointer;
         padding: 10px;
       }
-
       .hamburger span {
         width: 25px;
         height: 3px;
@@ -456,48 +492,38 @@
         margin: 3px 0;
         transition: 0.3s;
       }
-
       .nav-links {
         display: flex;
       }
-
       .nav-links a {
         margin-left: 25px;
         text-decoration: none;
         color: #cbd5f5;
         transition: 0.3s;
       }
-
       .nav-links a:hover {
         color: #3b82f6;
       }
 
-      /* MOBILE RESPONSIVE */
       @media (max-width: 768px) {
         .hero h2 {
           font-size: 2rem;
         }
-
         #loader h1 {
           font-size: 1.8rem;
         }
-
         .section {
           padding: 60px 20px;
         }
-
         .whatsapp {
-          bottom: 80px; /* Move up to avoid overlapping sticky CTA */
+          bottom: 80px;
         }
-
         nav {
           padding: 15px 20px;
         }
-
         .hamburger {
           display: flex;
         }
-
         .nav-links {
           position: absolute;
           top: 100%;
@@ -512,33 +538,27 @@
           visibility: hidden;
           transition: all 0.3s ease;
         }
-
         .nav-links.active {
           transform: translateY(0);
           opacity: 1;
           visibility: visible;
         }
-
         .nav-links a {
           margin: 10px 20px;
           padding: 10px 0;
           border-bottom: 1px solid #1e293b;
         }
-
         .hamburger.active span:nth-child(1) {
           transform: rotate(45deg) translate(5px, 5px);
         }
-
         .hamburger.active span:nth-child(2) {
           opacity: 0;
         }
-
         .hamburger.active span:nth-child(3) {
           transform: rotate(-45deg) translate(7px, -6px);
         }
       }
 
-      /* MOBILE STICKY CTA */
       .mobile-cta {
         display: none;
         position: fixed;
@@ -550,7 +570,6 @@
         text-align: center;
         z-index: 1001;
       }
-
       .mobile-cta a {
         color: white;
         text-decoration: none;
@@ -561,11 +580,9 @@
         border-radius: 5px;
         transition: 0.3s;
       }
-
       .mobile-cta a:hover {
         background: rgba(255, 255, 255, 0.3);
       }
-
       @media (max-width: 768px) {
         .mobile-cta {
           display: block;
@@ -575,7 +592,6 @@
       body {
         animation: pageFade 1s ease;
       }
-
       @keyframes pageFade {
         from {
           opacity: 0;
@@ -584,16 +600,13 @@
           opacity: 1;
         }
       }
-
       @keyframes gradientMove {
-        0% {
+        0%,
+        100% {
           background-position: 0% 50%;
         }
         50% {
           background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
         }
       }
     </style>
@@ -611,16 +624,14 @@
     </div>
 
     <nav>
-      <!-- IMPORTANT: save your uploaded logo as logo.png -->
       <img src="logo.png" class="logo" alt="KASTECH Logo" />
       <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#upgrades">Upgrades</a>
+        <a href="#products">Products</a>
         <a href="#booking">Book Now</a>
         <a href="#contact">Contact</a>
       </div>
@@ -628,7 +639,7 @@
 
     <section class="hero">
       <h2>Laptop Repair <span>& Performance Upgrades</span></h2>
-      <p>Don’t replace. Upgrade.</p>
+      <p>Don't replace. Upgrade.</p>
       <a href="https://wa.me/27749691205" class="btn">WhatsApp for Quote</a>
     </section>
 
@@ -667,11 +678,14 @@
     </section>
 
     <section class="section hidden" id="products">
-      <h2>Refurbished Laptops</h2>
+      <h2>Products</h2>
       <div class="divider"></div>
-      <p style="text-align: center; color: #94a3b8">
-        New stock arriving soon. Please check back later!
-      </p>
+      <div id="laptops-container">
+        <div class="laptops-status">
+          <div class="spinner"></div>
+          <p>Loading available stock...</p>
+        </div>
+      </div>
     </section>
 
     <section class="section hidden">
@@ -698,22 +712,18 @@
     <section class="section hidden" id="booking">
       <h2>Book a Repair</h2>
       <div class="divider"></div>
-
       <p style="text-align: center; color: #94a3b8">
-        Fill this in and we’ll respond on WhatsApp within minutes.
+        Fill this in and we'll respond on WhatsApp within minutes.
       </p>
-
       <form id="bookingForm" class="booking-form">
         <div class="form-group">
           <label>Full Name</label>
           <input type="text" id="name" placeholder="John Smith" required />
         </div>
-
         <div class="form-group">
           <label>Phone / WhatsApp</label>
           <input type="text" id="phone" placeholder="074 000 0000" required />
         </div>
-
         <div class="form-group">
           <label>Select Service</label>
           <select id="service">
@@ -726,12 +736,10 @@
             <option>Other</option>
           </select>
         </div>
-
         <div class="form-group">
           <label>Laptop Brand (Optional)</label>
           <input type="text" id="brand" placeholder="Dell, HP, Lenovo..." />
         </div>
-
         <div class="form-group">
           <label>Describe the Issue</label>
           <textarea
@@ -739,7 +747,6 @@
             placeholder="e.g. Laptop is very slow, takes long to start..."
           ></textarea>
         </div>
-
         <button type="submit" class="btn">📲 Book via WhatsApp</button>
       </form>
     </section>
@@ -756,7 +763,8 @@
         style="border: 0; border-radius: 8px; margin: 20px 0"
         allowfullscreen=""
         loading="lazy"
-      ></iframe>
+      >
+      </iframe>
       <p>📞 074 969 1205 (Call / WhatsApp)</p>
       <p>📧 KasTech06@gmail.com</p>
       <p>🕒 Mon – Sun | 9:00AM – 6:00PM</p>
@@ -765,11 +773,96 @@
     <a href="https://wa.me/27749691205" class="whatsapp">Chat on WhatsApp</a>
 
     <script>
+      const SHEET_CSV_URL =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4bNwxT4fuhOsCw7gidP74rpDdy33owotJraRACj-UjzxeCx7qjz6YV-fitkSHny9rJxwUmw8Bjgt2/pub?gid=0&single=true&output=csv";
+
+      async function loadLaptops() {
+        const container = document.getElementById("laptops-container");
+        try {
+          const response = await fetch(
+            "https://corsproxy.io/?" + encodeURIComponent(SHEET_CSV_URL),
+          );
+          if (!response.ok) throw new Error("Could not load sheet");
+
+          const csvText = await response.text();
+          const rows = parseCSV(csvText);
+          const laptops = rows
+            .slice(1)
+            .filter((row) => row.some((cell) => cell.trim() !== ""));
+
+          if (laptops.length === 0) {
+            container.innerHTML = `<div class="laptops-status"><p>New stock arriving soon. Please check back later!</p></div>`;
+            return;
+          }
+
+          const grid = document.createElement("div");
+          grid.className = "product-grid";
+
+          laptops.forEach((row) => {
+            const [
+              name = "",
+              specs = "",
+              price = "",
+              condition = "",
+              badge = "",
+            ] = row;
+            if (!name.trim()) return;
+            const waMessage = encodeURIComponent(
+              `Hi KasTech! I'm interested in the ${name.trim()} listed on your website (${price.trim()}). Is it still available?`,
+            );
+            const waLink = `https://wa.me/27749691205?text=${waMessage}`;
+            const card = document.createElement("div");
+            card.className = "product-card";
+            card.innerHTML = `
+              ${badge.trim() ? `<span class="badge">${badge.trim()}</span>` : ""}
+              <h3>${name.trim()}</h3>
+              <p class="specs">${specs.trim().replace(/\|/g, "<br>")}</p>
+              ${condition.trim() ? `<span class="condition">${condition.trim()}</span>` : ""}
+              <div class="price">${price.trim()}</div>
+              <a href="${waLink}" target="_blank" class="enquire-btn">💬 Enquire on WhatsApp</a>
+            `;
+            grid.appendChild(card);
+          });
+
+          container.innerHTML = "";
+          container.appendChild(grid);
+        } catch (err) {
+          console.error("KasTech Laptops:", err);
+          container.innerHTML = `<div class="laptops-status"><p>New stock arriving soon. Please check back later!</p></div>`;
+        }
+      }
+
+      function parseCSV(text) {
+        const rows = [];
+        const lines = text.trim().split("\n");
+        for (const line of lines) {
+          const row = [];
+          let current = "";
+          let inQuotes = false;
+          for (let i = 0; i < line.length; i++) {
+            const ch = line[i];
+            if (ch === '"') {
+              inQuotes = !inQuotes;
+            } else if (ch === "," && !inQuotes) {
+              row.push(current);
+              current = "";
+            } else {
+              current += ch;
+            }
+          }
+          row.push(current);
+          rows.push(row);
+        }
+        return rows;
+      }
+
+      document.addEventListener("DOMContentLoaded", loadLaptops);
+    </script>
+
+    <script>
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("show");
         });
       });
       document
@@ -790,20 +883,12 @@
         .getElementById("bookingForm")
         .addEventListener("submit", function (e) {
           e.preventDefault();
-
           let name = document.getElementById("name").value;
           let phone = document.getElementById("phone").value;
           let service = document.getElementById("service").value;
           let brand = document.getElementById("brand").value;
           let message = document.getElementById("message").value;
-
-          let text = `New Booking:%0A
-Name: ${name}%0A
-Phone: ${phone}%0A
-Service: ${service}%0A
-Brand: ${brand}%0A
-Issue: ${message}`;
-
+          let text = `New Booking:%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ABrand: ${brand}%0AIssue: ${message}`;
           window.open(`https://wa.me/27749691205?text=${text}`, "_blank");
         });
     </script>
@@ -815,28 +900,22 @@ Issue: ${message}`;
 
     <script>
       function toggleMenu() {
-        const navLinks = document.querySelector(".nav-links");
-        const hamburger = document.querySelector(".hamburger");
-        navLinks.classList.toggle("active");
-        hamburger.classList.toggle("active");
+        document.querySelector(".nav-links").classList.toggle("active");
+        document.querySelector(".hamburger").classList.toggle("active");
       }
-
-      // Close mobile menu when a link is clicked
       document.querySelectorAll(".nav-links a").forEach((link) => {
         link.addEventListener("click", () => {
           document.querySelector(".nav-links").classList.remove("active");
           document.querySelector(".hamburger").classList.remove("active");
         });
       });
-
-      // Scroll Progress Bar
       window.addEventListener("scroll", () => {
         const scroll = document.documentElement.scrollTop;
         const height =
           document.documentElement.scrollHeight -
           document.documentElement.clientHeight;
-        const scrolled = (scroll / height) * 100;
-        document.getElementById("progress").style.width = scrolled + "%";
+        document.getElementById("progress").style.width =
+          (scroll / height) * 100 + "%";
       });
     </script>
 
@@ -844,8 +923,6 @@ Issue: ${message}`;
       document.addEventListener("mousemove", (e) => {
         let x = (window.innerWidth / 2 - e.pageX) / 40;
         let y = (window.innerHeight / 2 - e.pageY) / 40;
-
-        // Apply parallax to the content inside hero rather than the whole section
         document.querySelector(".hero h2").style.transform =
           `translate(${x}px, ${y}px)`;
         document.querySelector(".hero p").style.transform =
@@ -854,9 +931,7 @@ Issue: ${message}`;
     </script>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
     <div id="particles-js"></div>
-
     <script>
       particlesJS("particles-js", {
         particles: {
