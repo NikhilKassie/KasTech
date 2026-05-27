@@ -258,6 +258,15 @@
         letter-spacing: 0.5px;
       }
 
+      .product-card .product-img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        border: 1px solid #1e293b;
+      }
+
       .product-card .enquire-btn {
         display: inline-block;
         margin-top: 10px;
@@ -847,19 +856,195 @@
     <section class="section hidden contact" id="contact">
       <h2>Contact</h2>
       <div class="divider"></div>
-      <p>📍 8 Jermyn Street, Robertsham</p>
-      <iframe
-        src="https://maps.google.com/maps?q=8%20Jermyn%20Street%20Robertsham%20Johannesburg%20South%20Africa&output=embed"
-        width="100%"
-        height="300"
-        frameborder="0"
-        style="border: 0; border-radius: 8px; margin: 20px 0"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-      <p>📞 074 969 1205 (Call / WhatsApp)</p>
-      <p>📧 KasTech06@gmail.com</p>
-      <p>🕒 Mon – Sun | 9:00AM – 6:00PM</p>
+
+      <!-- WHY CHOOSE US -->
+      <div class="grid" style="margin-bottom: 50px">
+        <div class="card" style="text-align: center">
+          <div style="font-size: 2rem; margin-bottom: 10px">⚡</div>
+          <h3 style="color: #3b82f6; margin-bottom: 8px">Same-Day Service</h3>
+          <p style="color: #94a3b8; font-size: 0.9rem">
+            Fast repairs when you need them most. No long waits.
+          </p>
+        </div>
+        <div class="card" style="text-align: center">
+          <div style="font-size: 2rem; margin-bottom: 10px">🛡️</div>
+          <h3 style="color: #3b82f6; margin-bottom: 8px">Quality Parts</h3>
+          <p style="color: #94a3b8; font-size: 0.9rem">
+            We only use high-quality, trusted components on every repair.
+          </p>
+        </div>
+        <div class="card" style="text-align: center">
+          <div style="font-size: 2rem; margin-bottom: 10px">💰</div>
+          <h3 style="color: #3b82f6; margin-bottom: 8px">Fair Pricing</h3>
+          <p style="color: #94a3b8; font-size: 0.9rem">
+            Honest quotes with no hidden costs. Ever.
+          </p>
+        </div>
+        <div class="card" style="text-align: center">
+          <div style="font-size: 2rem; margin-bottom: 10px">📲</div>
+          <h3 style="color: #3b82f6; margin-bottom: 8px">Fast Response</h3>
+          <p style="color: #94a3b8; font-size: 0.9rem">
+            WhatsApp us and get a reply within minutes.
+          </p>
+        </div>
+      </div>
+
+      <!-- OPENING HOURS + CONTACT -->
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 25px;
+          margin-bottom: 50px;
+        "
+      >
+        <div class="card" style="text-align: center">
+          <h3
+            style="
+              color: #3b82f6;
+              margin-bottom: 20px;
+              font-family: &quot;Orbitron&quot;;
+            "
+          >
+            🕒 Hours
+          </h3>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 10px;
+            "
+          >
+            <span style="color: #94a3b8">Monday – Friday</span>
+            <span style="color: #e2e8f0; font-weight: 600">9:00 – 18:00</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 10px;
+            "
+          >
+            <span style="color: #94a3b8">Saturday</span>
+            <span style="color: #e2e8f0; font-weight: 600">9:00 – 18:00</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 20px;
+            "
+          >
+            <span style="color: #94a3b8">Sunday</span>
+            <span style="color: #e2e8f0; font-weight: 600">9:00 – 18:00</span>
+          </div>
+          <div
+            style="
+              height: 1px;
+              background: linear-gradient(
+                to right,
+                transparent,
+                #3b82f6,
+                transparent
+              );
+              margin-bottom: 20px;
+            "
+          ></div>
+          <p style="color: #94a3b8; font-size: 0.85rem">
+            📍 8 Jermyn Street, Robertsham
+          </p>
+          <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 8px">
+            📞 074 969 1205
+          </p>
+          <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 8px">
+            📧 KasTech06@gmail.com
+          </p>
+        </div>
+
+        <!-- SOCIAL MEDIA -->
+        <div class="card" style="text-align: center">
+          <h3
+            style="
+              color: #3b82f6;
+              margin-bottom: 20px;
+              font-family: &quot;Orbitron&quot;;
+            "
+          >
+            📱 Follow Us
+          </h3>
+          <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 25px">
+            Stay updated with tips, deals and behind the scenes content.
+          </p>
+
+          <a
+            href="https://www.tiktok.com/@kastech_sa"
+            target="_blank"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              padding: 12px 18px;
+              border-radius: 8px;
+              margin-bottom: 14px;
+              background: rgba(0, 0, 0, 0.4);
+              border: 1px solid #333;
+              text-decoration: none;
+              transition: 0.3s;
+            "
+            onmouseover="this.style.borderColor = '#3b82f6'"
+            onmouseout="this.style.borderColor = '#333'"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"
+              />
+            </svg>
+            <div style="text-align: left">
+              <div style="color: white; font-weight: 600; font-size: 0.85rem">
+                TikTok
+              </div>
+              <div style="color: #64748b; font-size: 0.75rem">@kastech_sa</div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.instagram.com/kastech_sa"
+            target="_blank"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              padding: 12px 18px;
+              border-radius: 8px;
+              background: rgba(0, 0, 0, 0.4);
+              border: 1px solid #333;
+              text-decoration: none;
+              transition: 0.3s;
+            "
+            onmouseover="this.style.borderColor = '#ef4444'"
+            onmouseout="this.style.borderColor = '#333'"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+            </svg>
+            <div style="text-align: left">
+              <div style="color: white; font-weight: 600; font-size: 0.85rem">
+                Instagram
+              </div>
+              <div style="color: #64748b; font-size: 0.75rem">@kastech_sa</div>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <a href="https://wa.me/27749691205" class="whatsapp">Chat on WhatsApp</a>
@@ -914,6 +1099,7 @@
             const price = (item.Price || "").trim();
             const condition = (item.Condition || "").trim();
             const badge = (item.Badge || "").trim();
+            const image = (item.Image || "").trim();
             if (!name) return;
 
             const waMessage = encodeURIComponent(
@@ -925,6 +1111,7 @@
             card.className = "product-card";
             card.innerHTML = `
               ${badge ? `<span class="badge">${badge}</span>` : ""}
+              ${image ? `<img src="${image}" alt="${name}" class="product-img" onerror="this.style.display='none'" />` : ""}
               <h3>${name}</h3>
               <p class="specs">${specs.replace(/\|/g, "<br>")}</p>
               ${condition ? `<span class="condition">${condition}</span>` : ""}
