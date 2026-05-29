@@ -118,68 +118,6 @@
         transition: 0.3s;
         font-size: 0.9rem;
       }
-
-      /* Quote modal + button */
-      .quote-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 90px;
-        background: linear-gradient(90deg, #3b82f6, #ef4444);
-        color: white;
-        padding: 12px 18px;
-        border-radius: 40px;
-        text-decoration: none;
-        z-index: 1001;
-        font-weight: 700;
-      }
-      .modal {
-        position: fixed;
-        inset: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        background: rgba(2, 6, 23, 0.6);
-        z-index: 1002;
-      }
-      .modal[aria-hidden="false"] {
-        display: flex;
-      }
-      .modal-content {
-        background: #021024;
-        padding: 22px;
-        border-radius: 12px;
-        width: 92%;
-        max-width: 520px;
-        color: #e2e8f0;
-        position: relative;
-      }
-      .modal-close {
-        position: absolute;
-        right: 12px;
-        top: 8px;
-        background: transparent;
-        border: 0;
-        color: #94a3b8;
-        font-size: 22px;
-        cursor: pointer;
-      }
-      .modal-content h3 {
-        font-family: Orbitron, Arial;
-        margin-bottom: 8px;
-      }
-      .modal-content .form-group {
-        margin-bottom: 10px;
-      }
-      .modal-content input,
-      .modal-content textarea,
-      .modal-content select {
-        width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #1e293b;
-        background: #020617;
-        color: #e2e8f0;
-      }
       .nav-links a:hover {
         color: #3b82f6;
       }
@@ -501,20 +439,6 @@
         transform: translateY(0);
       }
 
-      .whatsapp {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #25d366;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 50px;
-        text-decoration: none;
-        z-index: 1000;
-        font-weight: bold;
-        animation: pulse 2s infinite;
-      }
-
       .hamburger {
         display: none;
         flex-direction: column;
@@ -565,110 +489,6 @@
           margin: 10px 20px;
           padding: 10px 0;
           border-bottom: 1px solid #1e293b;
-        }
-        /* hide separate buttons on mobile — use the FAB instead */
-        .quote-btn,
-        .whatsapp {
-          display: none !important;
-        }
-
-        /* Mobile FAB */
-        .fab {
-          position: fixed;
-          right: 16px;
-          bottom: 16px;
-          z-index: 1004;
-          display: block;
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          align-items: center;
-          justify-content: center;
-          pointer-events: auto;
-        }
-
-        .fab-button {
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          background: linear-gradient(90deg, #3b82f6, #ef4444);
-          color: white;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          font-family: Orbitron, Inter, Arial;
-          font-weight: 700;
-          font-size: 20px;
-          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-          border: none;
-          cursor: pointer;
-          transition: transform 0.18s ease;
-        }
-
-        .fab.open .fab-button {
-          transform: rotate(45deg);
-        }
-
-        .fab-options {
-          position: absolute;
-          bottom: 74px;
-          right: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          align-items: flex-end;
-          pointer-events: none;
-          opacity: 0;
-          transform: translateY(8px);
-          transition:
-            opacity 0.18s ease,
-            transform 0.18s ease;
-        }
-
-        .fab.open .fab-options {
-          pointer-events: auto;
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        /* per-option fan-out animation */
-        .fab-option {
-          background: #021024;
-          color: #e2e8f0;
-          padding: 10px 14px;
-          border-radius: 999px;
-          text-decoration: none;
-          font-weight: 600;
-          box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
-          display: inline-flex;
-          gap: 10px;
-          align-items: center;
-          font-size: 0.95rem;
-          opacity: 0;
-          transform: translateY(8px);
-          transition:
-            opacity 0.18s ease,
-            transform 0.18s ease;
-        }
-
-        .fab.open .fab-options .fab-option {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .fab.open .fab-options .fab-option:nth-child(1) {
-          transition-delay: 0s;
-        }
-        .fab.open .fab-options .fab-option:nth-child(2) {
-          transition-delay: 0.04s;
-        }
-        .modal-content {
-          max-width: calc(100% - 32px);
-          max-height: 90vh;
-          overflow-y: auto;
-        }
-        .whatsapp {
-          bottom: 80px;
         }
         .mobile-cta {
           display: block;
@@ -968,79 +788,6 @@
         >
       </p>
     </footer>
-
-    <a
-      href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20website%20quote.%20Can%20you%20help%20me%3F"
-      class="whatsapp"
-      target="_blank"
-      >Chat on WhatsApp</a
-    >
-
-    <a href="#" class="quote-btn" id="open-quote">Request a Quote</a>
-
-    <div class="fab" id="fab" aria-expanded="false">
-      <button
-        class="fab-button"
-        id="fab-toggle"
-        aria-label="Open contact actions"
-      >
-        K
-      </button>
-      <div class="fab-options" id="fab-options" aria-hidden="true">
-        <a
-          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20website%20quote.%20Can%20you%20help%20me%3F"
-          target="_blank"
-          class="fab-option"
-        >
-          <span class="icon">💬</span>
-          WhatsApp
-        </a>
-        <a href="#" class="fab-option" id="fab-quote">
-          <span class="icon">📝</span>
-          Quote
-        </a>
-      </div>
-    </div>
-
-    <div id="quote-modal" class="modal" aria-hidden="true">
-      <div class="modal-content">
-        <button class="modal-close" id="close-quote">×</button>
-        <h3>Request a Quote</h3>
-        <form id="quote-form" action="#" method="POST">
-          <div class="form-group">
-            <label>Name</label><input name="name" required />
-          </div>
-          <div class="form-group">
-            <label>Email</label><input type="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label>Phone / WhatsApp</label><input name="phone" />
-          </div>
-          <div class="form-group">
-            <label>Service</label
-            ><select name="service">
-              <option>Website Development</option>
-              <option>Online Store</option>
-              <option>Maintenance</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Message</label><textarea name="message" required></textarea>
-          </div>
-          <input
-            type="hidden"
-            name="_subject"
-            value="New quote request from website"
-          />
-          <button type="submit" class="btn">Send Request</button>
-          <div
-            id="quote-result"
-            style="margin-top: 10px; color: #94a3b8; display: none"
-          ></div>
-        </form>
-      </div>
-    </div>
-
     <div class="mobile-cta">
       <a href="https://wa.me/27749691205?text=Hi! I need a website.">
         Get Quote</a
@@ -1055,46 +802,6 @@
         });
       });
 
-      (function () {
-        const open = document.getElementById("open-quote");
-        const modal = document.getElementById("quote-modal");
-        const close = document.getElementById("close-quote");
-        const form = document.getElementById("quote-form");
-        const result = document.getElementById("quote-result");
-        function show(v) {
-          modal.setAttribute("aria-hidden", String(!v));
-        }
-        open.addEventListener("click", (e) => {
-          e.preventDefault();
-          show(true);
-        });
-        close.addEventListener("click", () => show(false));
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) show(false);
-        });
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const name = form.querySelector('[name="name"]').value.trim();
-          const email = form.querySelector('[name="email"]').value.trim();
-          const phone = form.querySelector('[name="phone"]').value.trim();
-          const service = form.querySelector('[name="service"]').value.trim();
-          const message = form.querySelector('[name="message"]').value.trim();
-
-          const text = `Hi KasTech! I would like a website quote.
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Service: ${service}
-Message: ${message}`;
-          const waLink = `https://wa.me/27749691205?text=${encodeURIComponent(text)}`;
-
-          result.textContent = "Opening WhatsApp...";
-          result.style.display = "block";
-          show(false);
-          window.open(waLink, "_blank");
-          form.reset();
-        });
-      })();
       document
         .querySelectorAll(".hidden")
         .forEach((el) => observer.observe(el));
@@ -1133,42 +840,216 @@ Message: ${message}`;
         },
       });
     </script>
-    <script>
-      // Mobile FAB behaviour (webdev)
-      (function () {
-        const fab = document.getElementById("fab");
-        const toggle = document.getElementById("fab-toggle");
-        const options = document.getElementById("fab-options");
-        const fabQuote = document.getElementById("fab-quote");
 
+    <!-- ── KasTech FAB ── -->
+    <style>
+      .kt-fab {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 1050;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+      }
+
+      .kt-fab-options {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+        transition:
+          opacity 0.22s ease,
+          transform 0.22s ease;
+      }
+
+      .kt-fab.open .kt-fab-options {
+        pointer-events: auto;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .kt-fab-option {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: #e2e8f0;
+        background: #0b1528;
+        border: 1px solid rgba(59, 130, 246, 0.4);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .kt-fab.open .kt-fab-option {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .kt-fab.open .kt-fab-option:nth-child(1) {
+        transition-delay: 0.04s;
+      }
+      .kt-fab.open .kt-fab-option:nth-child(2) {
+        transition-delay: 0s;
+      }
+
+      .kt-fab-option:hover {
+        transform: translateY(-2px) !important;
+        border-color: #3b82f6;
+        box-shadow: 0 10px 28px rgba(59, 130, 246, 0.28);
+        color: #fff;
+      }
+
+      .kt-fab-option .kf-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: rgba(59, 130, 246, 0.12);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+      }
+
+      .kt-fab-toggle {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #3b82f6, #ef4444);
+        border: none;
+        color: #fff;
+        font-family: "Orbitron", Arial, sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow:
+          0 6px 22px rgba(59, 130, 246, 0.45),
+          0 3px 12px rgba(239, 68, 68, 0.3);
+        transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease,
+          background 0.22s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        animation: kt-fab-pulse 2.8s ease-in-out infinite;
+      }
+
+      .kt-fab-toggle:hover {
+        transform: scale(1.1) !important;
+        box-shadow:
+          0 10px 30px rgba(59, 130, 246, 0.55),
+          0 5px 16px rgba(239, 68, 68, 0.4);
+      }
+
+      .kt-fab.open .kt-fab-toggle {
+        background: linear-gradient(135deg, #ef4444, #3b82f6);
+        animation: none;
+        transform: rotate(0deg);
+      }
+
+      @keyframes kt-fab-pulse {
+        0%,
+        100% {
+          box-shadow:
+            0 6px 22px rgba(59, 130, 246, 0.45),
+            0 3px 12px rgba(239, 68, 68, 0.3);
+        }
+        50% {
+          box-shadow:
+            0 8px 32px rgba(59, 130, 246, 0.65),
+            0 4px 18px rgba(239, 68, 68, 0.5);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .kt-fab {
+          bottom: 20px;
+          right: 16px;
+        }
+        .kt-fab-toggle {
+          width: 52px;
+          height: 52px;
+          font-size: 1.05rem;
+        }
+        .kt-fab-option {
+          padding: 10px 16px;
+          font-size: 0.82rem;
+        }
+      }
+    </style>
+
+    <div class="kt-fab" id="kt-fab">
+      <div class="kt-fab-options" id="kt-fab-options">
+        <a
+          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20would%20like%20to%20request%20a%20quote.%20Can%20you%20help%20me%3F"
+          target="_blank"
+          class="kt-fab-option"
+        >
+          <span class="kf-icon">📋</span>
+          Request a Quote
+        </a>
+        <a
+          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20assistance.%20Can%20you%20help%20me%3F"
+          target="_blank"
+          class="kt-fab-option"
+        >
+          <span class="kf-icon">💬</span>
+          WhatsApp
+        </a>
+      </div>
+      <button
+        class="kt-fab-toggle"
+        id="kt-fab-toggle"
+        aria-label="Contact KasTech"
+        aria-expanded="false"
+      >
+        K
+      </button>
+    </div>
+
+    <script>
+      (function () {
+        var fab = document.getElementById("kt-fab");
+        var toggle = document.getElementById("kt-fab-toggle");
         if (!fab || !toggle) return;
 
         function closeFab() {
           fab.classList.remove("open");
-          fab.setAttribute("aria-expanded", "false");
-          options && options.setAttribute("aria-hidden", "true");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.textContent = "K";
         }
 
         toggle.addEventListener("click", function (e) {
           e.stopPropagation();
-          const isOpen = fab.classList.toggle("open");
-          fab.setAttribute("aria-expanded", String(isOpen));
-          options && options.setAttribute("aria-hidden", String(!isOpen));
+          var isOpen = fab.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+          toggle.textContent = isOpen ? "✕" : "K";
         });
 
         document.addEventListener("click", function (e) {
           if (!fab.contains(e.target)) closeFab();
         });
-        window.addEventListener("scroll", closeFab, { passive: true });
 
-        if (fabQuote) {
-          fabQuote.addEventListener("click", function (e) {
-            e.preventDefault();
-            const opener = document.getElementById("open-quote");
-            opener && opener.click();
-            closeFab();
-          });
-        }
+        window.addEventListener("scroll", closeFab, { passive: true });
       })();
     </script>
   </body>
