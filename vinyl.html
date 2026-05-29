@@ -1005,25 +1005,51 @@
       <p>
         Contact: <a href="tel:0749691205">074 969 1205</a> •
         <a href="mailto:KasTech06@gmail.com">KasTech06@gmail.com</a> •
-        <a href="https://wa.me/27749691205">WhatsApp</a>
+        <a
+          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20vinyl%20branding%20quote.%20Can%20you%20help%20me%3F"
+          >WhatsApp</a
+        >
       </p>
     </footer>
 
-    <a href="https://wa.me/27749691205" class="whatsapp" target="_blank"
+    <a
+      href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20vinyl%20branding%20quote.%20Can%20you%20help%20me%3F"
+      class="whatsapp"
+      target="_blank"
       >Chat on WhatsApp</a
     >
 
     <a href="#" class="quote-btn" id="open-quote">Request a Quote</a>
 
+    <div class="fab" id="fab" aria-expanded="false">
+      <button
+        class="fab-button"
+        id="fab-toggle"
+        aria-label="Open contact actions"
+      >
+        K
+      </button>
+      <div class="fab-options" id="fab-options" aria-hidden="true">
+        <a
+          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20vinyl%20branding%20quote.%20Can%20you%20help%20me%3F"
+          target="_blank"
+          class="fab-option"
+        >
+          <span class="icon">💬</span>
+          WhatsApp
+        </a>
+        <a href="#" class="fab-option" id="fab-quote">
+          <span class="icon">📝</span>
+          Quote
+        </a>
+      </div>
+    </div>
+
     <div id="quote-modal" class="modal" aria-hidden="true">
       <div class="modal-content">
         <button class="modal-close" id="close-quote">×</button>
         <h3>Request a Quote</h3>
-        <form
-          id="quote-form"
-          action="https://formspree.io/f/yourFormId"
-          method="POST"
-        >
+        <form id="quote-form" action="#" method="POST">
           <div class="form-group">
             <label>Name</label><input name="name" required />
           </div>
@@ -1128,26 +1154,25 @@
         });
         form.addEventListener("submit", function (e) {
           e.preventDefault();
-          const data = new FormData(form);
-          fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: { Accept: "application/json" },
-          })
-            .then((r) => {
-              if (r.ok) {
-                result.textContent = "Thanks — we will reply shortly.";
-                result.style.display = "block";
-                form.reset();
-              } else {
-                result.textContent = "Submission failed. Please try WhatsApp.";
-                result.style.display = "block";
-              }
-            })
-            .catch(() => {
-              result.textContent = "Network error. Please try WhatsApp.";
-              result.style.display = "block";
-            });
+          const name = form.querySelector('[name="name"]').value.trim();
+          const email = form.querySelector('[name="email"]').value.trim();
+          const phone = form.querySelector('[name="phone"]').value.trim();
+          const service = form.querySelector('[name="service"]').value.trim();
+          const message = form.querySelector('[name="message"]').value.trim();
+
+          const text = `Hi KasTech! I would like a vinyl branding quote.
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Service: ${service}
+Message: ${message}`;
+          const waLink = `https://wa.me/27749691205?text=${encodeURIComponent(text)}`;
+
+          result.textContent = "Opening WhatsApp...";
+          result.style.display = "block";
+          show(false);
+          window.open(waLink, "_blank");
+          form.reset();
         });
       })();
     </script>
