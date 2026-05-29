@@ -5,77 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="KasTech builds modern websites for local businesses, stores and portfolios with fast mobile-friendly performance."
+      content="KasTech provides laptop repairs, performance upgrades, website development, and Vinyl Branding services in South Africa."
     />
     <meta
       name="keywords"
-      content="KasTech, website development, web design, South Africa, business website, online store, portfolio site"
+      content="KasTech, laptop repair, website development, Vinyl Branding, web design, stickers, decals, WhatsApp booking"
     />
-    <meta property="og:title" content="KasTech | Website Development" />
+    <meta
+      property="og:title"
+      content="KasTech | Laptop Repair & Performance Upgrades"
+    />
     <meta
       property="og:description"
-      content="Modern business websites built by KasTech with WhatsApp support and SEO-ready pages."
+      content="KasTech offers trusted laptop repair, web development and Vinyl Branding services. Contact us on WhatsApp for a fast quote."
     />
     <meta property="og:image" content="og-image.svg" />
     <meta name="theme-color" content="#020617" />
-    <title>KASTECH | Website Development</title>
+    <title>KASTECH | Laptop Repair & Performance Upgrades</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       html {
         scroll-behavior: smooth;
       }
+
       body {
         font-family: "Inter", sans-serif;
         background: #020617;
         color: #e2e8f0;
-        animation: pageFade 1s ease;
       }
 
-      @keyframes pageFade {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      @keyframes gradientMove {
-        0%,
-        100% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-      }
-      @keyframes navFade {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes pulse {
-        0%,
-        100% {
-          box-shadow: 0 0 10px #25d366;
-        }
-        50% {
-          box-shadow: 0 0 25px #25d366;
-        }
-      }
-
+      /* SCROLL PROGRESS BAR */
       #progress {
         position: fixed;
         top: 0;
@@ -87,6 +57,14 @@
         transition: width 0.1s ease;
       }
 
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      /* NAVBAR */
       nav {
         position: fixed;
         width: 100%;
@@ -94,29 +72,696 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgba(2, 6, 23, 0.85);
+        background: rgba(2, 6, 23, 0.8);
         backdrop-filter: blur(10px);
         z-index: 1000;
         animation: navFade 1s ease;
       }
+
       .logo {
-        height: 55px;
+        height: 60px;
+        opacity: 0;
+        transform: translateY(-20px) scale(0.9);
+        animation: logoFade 1.2s ease forwards;
         filter: drop-shadow(0 0 10px #3b82f6) drop-shadow(0 0 15px #ef4444);
         transition: 0.3s;
       }
+
       .logo:hover {
         transform: scale(1.05);
       }
-      .nav-links {
-        display: flex;
-        gap: 0;
-      }
-      .nav-links a {
-        margin-left: 22px;
+
+      nav a {
+        margin-left: 25px;
         text-decoration: none;
         color: #cbd5f5;
         transition: 0.3s;
+      }
+      nav a:hover {
+        color: #3b82f6;
+      }
+
+      /* HERO */
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(-45deg, #020617, #1d4ed8, #020617, #ef4444);
+        background-size: 400% 400%;
+        animation: gradientMove 10s ease infinite;
+      }
+
+      .hero h2 {
+        font-family: "Orbitron";
+        font-size: 3.5rem;
+        padding: 0 20px;
+        text-shadow: 0 0 20px #3b82f6;
+      }
+
+      .hero span {
+        color: #ef4444;
+      }
+
+      .hero p {
+        margin-top: 10px;
+        color: #94a3b8;
+      }
+
+      .btn {
+        margin-top: 30px;
+        padding: 14px 30px;
+        background: linear-gradient(90deg, #3b82f6, #ef4444);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .btn.secondary {
+        background: linear-gradient(90deg, #ef4444, #b91c1c);
+      }
+
+      .btn::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        transition:
+          width 0.5s,
+          height 0.5s;
+      }
+
+      .btn:active::after {
+        width: 200px;
+        height: 200px;
+      }
+
+      .btn:hover {
+        transform: scale(1.08);
+      }
+
+      .hero-subtitle {
+        margin-top: 14px;
+        color: #cbd5f5;
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.95;
+        animation: fadeInUp 1.2s ease both;
+      }
+
+      .hero p {
+        margin-top: 18px;
+        color: #94a3b8;
+        animation: fadeInUp 1.4s ease both;
+      }
+
+      .hero h2 {
+        animation: floatIn 1.2s ease both;
+      }
+
+      .hero-actions {
+        animation: popIn 1.5s ease both;
+      }
+
+      .card,
+      .service-card,
+      .package,
+      .portfolio-card {
+        will-change: transform, opacity;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes floatIn {
+        from {
+          opacity: 0;
+          transform: translateY(-18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .service-card {
+        padding: 25px;
+        border-radius: 14px;
+        background: #08101f;
+        border: 1px solid transparent;
+        background-image:
+          linear-gradient(#08101f, #08101f),
+          linear-gradient(90deg, #3b82f6, #ef4444, #3b82f6);
+        background-origin: padding-box, border-box;
+        background-clip: padding-box, border-box;
+        min-height: 220px;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          background-position 0.6s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px) rotate(-0.35deg) scale(1.02);
+        box-shadow: 0 18px 40px rgba(59, 130, 246, 0.18);
+        background-position:
+          padding-box,
+          100% 0;
+      }
+
+      .service-card h3 {
+        font-family: "Orbitron";
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        color: #e2e8f0;
+      }
+
+      .service-card p {
+        color: #94a3b8;
+        line-height: 1.7;
+      }
+
+      .service-card a {
+        display: inline-block;
+        margin-top: 18px;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .site-footer {
+        padding: 40px 20px;
+        background: rgba(2, 6, 23, 0.95);
+        border-top: 1px solid #1e293b;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .site-footer p,
+      .site-footer a {
+        color: #94a3b8;
         font-size: 0.9rem;
+      }
+
+      .site-footer a {
+        color: #3b82f6;
+        text-decoration: none;
+      }
+
+      /* SECTION */
+      .section {
+        padding: 100px 40px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      /* CARDS */
+      .card,
+      .service-card,
+      .package {
+        position: relative;
+        overflow: hidden;
+        padding: 25px;
+        border-radius: 14px;
+        background: #020617;
+        border: 1px solid transparent;
+        background-image:
+          linear-gradient(#020617, #020617),
+          linear-gradient(90deg, #3b82f6, #ef4444, #3b82f6);
+        background-origin: padding-box, border-box;
+        background-clip: padding-box, border-box;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          background-position 0.6s ease;
+      }
+
+      .card[data-icon]::before,
+      .service-card[data-icon]::before {
+        content: attr(data-icon);
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 16px;
+      }
+
+      .card:hover,
+      .service-card:hover,
+      .package:hover {
+        transform: translateY(-10px) rotate(-0.35deg) scale(1.02);
+        box-shadow: 0 18px 40px rgba(59, 130, 246, 0.18);
+        background-position:
+          padding-box,
+          100% 0;
+      }
+
+      .card:hover::before,
+      .service-card:hover::before,
+      .package:hover::before {
+        transform: translateY(-2px);
+      }
+
+      /* =============================================
+         REFURBISHED LAPTOPS — GOOGLE SHEETS POWERED
+         ============================================= */
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 25px;
+        margin-top: 10px;
+      }
+
+      .product-card {
+        padding: 25px;
+        border-radius: 12px;
+        background: #020617;
+        border: 1px solid #1e293b;
+        text-align: center;
+        transition: 0.4s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #3b82f6, #ef4444);
+      }
+
+      .product-card h3 {
+        font-family: "Orbitron";
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #e2e8f0;
+      }
+
+      .product-card .specs {
+        color: #94a3b8;
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        line-height: 1.6;
+      }
+
+      .product-card .condition {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin-bottom: 12px;
+        background: rgba(59, 130, 246, 0.15);
+        border: 1px solid #3b82f6;
+        color: #3b82f6;
+      }
+
+      .product-card .price {
+        font-size: 1.5rem;
+        color: #ef4444;
+        margin: 10px 0;
+        font-weight: bold;
+        font-family: "Orbitron";
+      }
+
+      .product-card .badge {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: #ef4444;
+        color: white;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 3px 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .product-card .product-img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        border: 1px solid #1e293b;
+      }
+
+      .product-card .enquire-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background: linear-gradient(90deg, #3b82f6, #ef4444);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.85rem;
+        transition: 0.3s;
+      }
+
+      .product-card .enquire-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px #3b82f6;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        border-color: #3b82f6;
+        box-shadow:
+          0 0 15px #3b82f6,
+          0 0 25px #ef4444;
+      }
+
+      /* Loading & empty states */
+      .laptops-status {
+        text-align: center;
+        color: #94a3b8;
+        padding: 40px 0;
+      }
+
+      .laptops-status .spinner {
+        width: 36px;
+        height: 36px;
+        border: 3px solid #1e293b;
+        border-top-color: #3b82f6;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin: 0 auto 15px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ===================================
+         END REFURBISHED LAPTOPS SECTION
+         =================================== */
+
+      /* DIVIDER */
+      .divider {
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #3b82f6,
+          #ef4444,
+          transparent
+        );
+        margin: 40px 0;
+      }
+
+      /* CONTACT */
+      .contact p {
+        margin: 10px 0;
+      }
+
+      /* WHATSAPP BUTTON */
+      .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        z-index: 1000;
+        font-weight: bold;
+        animation: pulse 2s infinite;
+      }
+
+      /* SCROLL ANIMATION */
+      .hidden {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s ease;
+      }
+      .show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes logoFade {
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes navFade {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* LOADER */
+      #loader {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: #020617;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        animation: fadeOut 1s ease 3s forwards;
+      }
+
+      .loader-logo {
+        width: 120px;
+        margin-bottom: 20px;
+        animation:
+          pulseLogo 1.5s infinite,
+          glowPulse 2s ease-in-out infinite alternate;
+        filter: drop-shadow(0 0 15px #3b82f6) drop-shadow(0 0 25px #ef4444);
+      }
+
+      #loader h1 {
+        font-family: "Orbitron";
+        color: white;
+        text-align: center;
+        padding: 0 20px;
+        letter-spacing: 2px;
+        animation:
+          fadeText 2s ease,
+          textGlow 2s ease-in-out infinite alternate;
+        margin-bottom: 30px;
+      }
+
+      .loader-progress {
+        width: 200px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .loader-progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #3b82f6, #ef4444);
+        width: 0%;
+        animation: loadProgress 3s ease-in-out forwards;
+        border-radius: 2px;
+      }
+
+      /* ANIMATIONS */
+      @keyframes pulseLogo {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes glowPulse {
+        from {
+          filter: drop-shadow(0 0 15px #3b82f6) drop-shadow(0 0 25px #ef4444);
+        }
+        to {
+          filter: drop-shadow(0 0 25px #3b82f6) drop-shadow(0 0 40px #ef4444);
+        }
+      }
+
+      @keyframes textGlow {
+        from {
+          text-shadow: 0 0 10px #3b82f6;
+        }
+        to {
+          text-shadow:
+            0 0 20px #3b82f6,
+            0 0 30px #ef4444;
+        }
+      }
+
+      @keyframes fadeText {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes loadProgress {
+        0% {
+          width: 0%;
+        }
+        70% {
+          width: 90%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 10px #25d366;
+        }
+        50% {
+          box-shadow: 0 0 25px #25d366;
+        }
+        100% {
+          box-shadow: 0 0 10px #25d366;
+        }
+      }
+
+      .booking-form {
+        max-width: 500px;
+        margin: auto;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+        color: #94a3b8;
+      }
+
+      .booking-form input,
+      .booking-form select,
+      .booking-form textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #1e293b;
+        background: #020617;
+        color: white;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      .booking-form input:focus,
+      .booking-form select:focus,
+      .booking-form textarea:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 10px #3b82f6;
+      }
+
+      .booking-form textarea {
+        min-height: 100px;
+        resize: none;
+      }
+
+      /* MOBILE NAV */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #cbd5f5;
+        margin: 3px 0;
+        transition: 0.3s;
+      }
+
+      .nav-links {
+        display: flex;
       }
 
       /* Quote modal + button */
@@ -132,6 +777,7 @@
         z-index: 1001;
         font-weight: 700;
       }
+
       .modal {
         position: fixed;
         inset: 0;
@@ -180,391 +826,31 @@
         background: #020617;
         color: #e2e8f0;
       }
+
+      .nav-links a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #cbd5f5;
+        transition: 0.3s;
+      }
+
       .nav-links a:hover {
         color: #3b82f6;
       }
-      .back-btn {
-        color: #ef4444 !important;
-      }
 
-      .hero {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background: linear-gradient(-45deg, #020617, #1d4ed8, #020617, #1e3a5f);
-        background-size: 400% 400%;
-        animation: gradientMove 10s ease infinite;
-        padding: 0 20px;
-      }
-      .hero-badge {
-        background: rgba(59, 130, 246, 0.15);
-        border: 1px solid #3b82f6;
-        color: #3b82f6;
-        padding: 6px 18px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-      }
-      .hero h2 {
-        font-family: "Orbitron";
-        font-size: 3.5rem;
-        padding: 0 20px;
-        text-shadow: 0 0 20px #3b82f6;
-        animation: floatIn 1.2s ease both;
-      }
-      .hero h2 span {
-        color: #ef4444;
-      }
-      .hero-subtitle {
-        margin-top: 14px;
-        color: #cbd5f5;
-        font-size: 1rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        opacity: 0.95;
-        animation: fadeInUp 1.2s ease both;
-      }
-      .hero p {
-        color: #94a3b8;
-        max-width: 500px;
-        line-height: 1.7;
-        margin-bottom: 30px;
-      }
-
-      .btn {
-        padding: 14px 30px;
-        background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-        color: white;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-      }
-      .btn:hover {
-        transform: scale(1.08);
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-      }
-
-      .section {
-        padding: 90px 40px;
-        max-width: 1200px;
-        margin: auto;
-      }
-      .section h2 {
-        font-family: "Orbitron";
-        font-size: 1.8rem;
-        margin-bottom: 5px;
-      }
-
-      .divider {
-        height: 2px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          #3b82f6,
-          #ef4444,
-          transparent
-        );
-        margin: 30px 0 40px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-      }
-
-      .card {
-        padding: 28px;
-        border-radius: 12px;
-        background: #020617;
-        border: 1px solid transparent;
-        background-image:
-          linear-gradient(#020617, #020617),
-          linear-gradient(90deg, #3b82f6, #1d4ed8);
-        background-origin: padding-box, border-box;
-        background-clip: padding-box, border-box;
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-        transition:
-          transform 0.35s ease,
-          box-shadow 0.35s ease,
-          background-position 0.6s ease;
-      }
-      .card:hover {
-        transform: translateY(-10px) rotate(-0.35deg) scale(1.02);
-        box-shadow: 0 18px 40px rgba(59, 130, 246, 0.18);
-        background-position:
-          padding-box,
-          100% 0;
-      }
-      .card-icon {
-        font-size: 2.2rem;
-        margin-bottom: 16px;
-        transition: transform 0.3s ease;
-      }
-      .card:hover .card-icon {
-        transform: translateY(-2px);
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(18px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes floatIn {
-        from {
-          opacity: 0;
-          transform: translateY(-18px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes popIn {
-        from {
-          opacity: 0;
-          transform: scale(0.96);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-      .card h3 {
-        font-family: "Orbitron";
-        font-size: 0.9rem;
-        color: #3b82f6;
-        margin-bottom: 10px;
-      }
-      .card p {
-        color: #94a3b8;
-        font-size: 0.85rem;
-        line-height: 1.6;
-      }
-
-      /* PACKAGES */
-      .packages {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 25px;
-      }
-      .package {
-        padding: 35px 28px;
-        border-radius: 12px;
-        background: #020617;
-        border: 1px solid #1e293b;
-        transition: 0.4s;
-        text-align: center;
-        position: relative;
-      }
-      .package.featured {
-        border-color: #3b82f6;
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
-      }
-      .package.featured::before {
-        content: "POPULAR";
-        position: absolute;
-        top: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(90deg, #3b82f6, #ef4444);
-        color: white;
-        font-size: 0.65rem;
-        font-weight: bold;
-        padding: 4px 14px;
-        border-radius: 20px;
-        letter-spacing: 1px;
-      }
-      .package:hover {
-        transform: translateY(-8px);
-        border-color: #3b82f6;
-      }
-      .package h3 {
-        font-family: "Orbitron";
-        font-size: 1rem;
-        color: #e2e8f0;
-        margin-bottom: 8px;
-      }
-      .package .price {
-        font-size: 2rem;
-        font-family: "Orbitron";
-        color: #3b82f6;
-        margin: 15px 0;
-      }
-      .package .price span {
-        font-size: 0.9rem;
-        color: #64748b;
-      }
-      .package ul {
-        list-style: none;
-        margin: 20px 0;
-        text-align: left;
-      }
-      .package ul li {
-        color: #94a3b8;
-        font-size: 0.82rem;
-        padding: 6px 0;
-        border-bottom: 1px solid #0f172a;
-      }
-      .package ul li::before {
-        content: "✓ ";
-        color: #3b82f6;
-        font-weight: bold;
-      }
-      .package a {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 24px;
-        background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-        color: white;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: bold;
-        transition: 0.3s;
-      }
-      .package a:hover {
-        transform: scale(1.05);
-      }
-
-      .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 20px;
-        margin-top: 30px;
-      }
-      .portfolio-card {
-        padding: 25px;
-        border-radius: 14px;
-        background: #08101f;
-        border: 1px solid #1e293b;
-        transition: 0.3s;
-      }
-      .portfolio-card:hover {
-        transform: translateY(-8px);
-        border-color: #3b82f6;
-        box-shadow: 0 0 18px rgba(59, 130, 246, 0.2);
-      }
-      .portfolio-card h3 {
-        font-family: "Orbitron";
-        font-size: 1rem;
-        margin-bottom: 12px;
-        color: #e2e8f0;
-      }
-      .portfolio-card p {
-        color: #94a3b8;
-        line-height: 1.7;
-      }
-      .portfolio-card span {
-        display: inline-block;
-        margin-top: 18px;
-        color: #3b82f6;
-        font-weight: 600;
-      }
-
-      .site-footer {
-        padding: 40px 20px;
-        background: rgba(2, 6, 23, 0.95);
-        border-top: 1px solid #1e293b;
-        text-align: center;
-        margin-top: 40px;
-      }
-      .site-footer p,
-      .site-footer a {
-        color: #94a3b8;
-        font-size: 0.9rem;
-      }
-      .site-footer a {
-        color: #3b82f6;
-        text-decoration: none;
-      }
-
-      .hidden {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 1s ease;
-      }
-      .show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .whatsapp {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #25d366;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 50px;
-        text-decoration: none;
-        z-index: 1000;
-        font-weight: bold;
-        animation: pulse 2s infinite;
-      }
-
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        padding: 10px;
-      }
-      .hamburger span {
-        width: 25px;
-        height: 3px;
-        background: #cbd5f5;
-        margin: 3px 0;
-        transition: 0.3s;
-      }
-
+      /* MOBILE RESPONSIVE */
       @media (max-width: 768px) {
-        .hero h1 {
+        .hero h2 {
           font-size: 2rem;
+        }
+        #loader h1 {
+          font-size: 1.8rem;
         }
         .section {
           padding: 60px 20px;
         }
-        nav {
-          padding: 15px 20px;
-        }
-        .hamburger {
-          display: flex;
-        }
-        .nav-links {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          background: rgba(2, 6, 23, 0.95);
-          backdrop-filter: blur(10px);
-          flex-direction: column;
-          padding: 20px 0;
-          transform: translateY(-100%);
-          opacity: 0;
-          visibility: hidden;
-          transition: all 0.3s ease;
-        }
-        .nav-links.active {
-          transform: translateY(0);
-          opacity: 1;
-          visibility: visible;
-        }
-        .nav-links a {
-          margin: 10px 20px;
-          padding: 10px 0;
-          border-bottom: 1px solid #1e293b;
+        .whatsapp {
+          bottom: 80px;
         }
         /* hide separate buttons on mobile — use the FAB instead */
         .quote-btn,
@@ -662,19 +948,65 @@
         .fab.open .fab-options .fab-option:nth-child(2) {
           transition-delay: 0.04s;
         }
-        .modal-content {
-          max-width: calc(100% - 32px);
-          max-height: 90vh;
-          overflow-y: auto;
+
+        .fab-option .icon {
+          width: 28px;
+          height: 28px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.04);
+          font-size: 14px;
         }
-        .whatsapp {
-          bottom: 80px;
+
+        nav {
+          padding: 15px 20px;
         }
-        .mobile-cta {
-          display: block;
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: rgba(2, 6, 23, 0.95);
+          backdrop-filter: blur(10px);
+          flex-direction: column;
+          padding: 20px 0;
+          transform: translateY(-100%);
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+        }
+
+        .nav-links.active {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .nav-links a {
+          margin: 10px 20px;
+          padding: 10px 0;
+          border-bottom: 1px solid #1e293b;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
         }
       }
 
+      /* MOBILE STICKY CTA */
       .mobile-cta {
         display: none;
         position: fixed;
@@ -686,6 +1018,7 @@
         text-align: center;
         z-index: 1001;
       }
+
       .mobile-cta a {
         color: white;
         text-decoration: none;
@@ -694,13 +1027,42 @@
         padding: 10px 20px;
         background: rgba(255, 255, 255, 0.2);
         border-radius: 5px;
+        transition: 0.3s;
       }
 
-      #particles-js {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+      .mobile-cta a:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .mobile-cta {
+          display: block;
+        }
+      }
+
+      body {
+        animation: pageFade 1s ease;
+      }
+
+      @keyframes pageFade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
     </style>
     <!-- Cookie-free analytics (Plausible) - replace data-domain with your domain -->
@@ -710,95 +1072,90 @@
       data-domain="REPLACE_WITH_YOUR_DOMAIN"
       src="https://plausible.io/js/plausible.js"
     ></script>
-    <!-- Umami example (self-hosted):
+    <!--
+      Alternative: Umami (self-hosted) snippet example:
       <script async defer data-website-id="YOUR_UMAMI_SITE_ID" src="https://your-umami.example.com/umami.js"></script>
     -->
   </head>
+
   <body>
     <div id="progress"></div>
     <div id="particles-js"></div>
 
+    <div id="loader">
+      <img src="logo.png" class="loader-logo" />
+      <h1>Welcome to KAS TECH</h1>
+      <div class="loader-progress">
+        <div class="loader-progress-bar"></div>
+      </div>
+    </div>
+
     <nav>
-      <a href="index.html"><img src="logo.png" class="logo" alt="KasTech" /></a>
+      <img src="logo.png" class="logo" alt="KASTECH Logo" />
       <div class="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
       <div class="nav-links">
-        <a href="index.html" class="back-btn">← Laptop Repair</a>
-        <a href="#what-we-build">What We Build</a>
-        <a href="#packages">Packages</a>
-        <a href="#contact">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#upgrades">Upgrades</a>
+        <a href="#products">Products</a>
+        <a href="webdev.html">Web Dev</a>
         <a href="vinyl.html">Vinyl Branding</a>
+        <a href="#booking">Book Now</a>
+        <a href="#contact">Contact</a>
+        <a href="#other-services" style="color: #ef4444">More ↓</a>
       </div>
     </nav>
 
     <section class="hero">
-      <h2>KASTECH</h2>
-      <p class="hero-subtitle">Website Development</p>
+      <h2>KasTech</h2>
+      <p class="hero-subtitle">
+        Tech Repairs, Web Development & Vinyl Branding
+      </p>
       <p>
-        Professional websites built for South African businesses. Fast,
-        mobile-friendly and designed to get you customers.
+        Company-grade technology, digital and branding services for businesses
+        and brands.
       </p>
       <div class="hero-actions">
-        <a
-          href="https://wa.me/27749691205?text=Hi KasTech! I'm interested in a website. Can we chat?"
-          class="btn"
-          >Get a Free Quote</a
-        >
+        <a href="webdev.html" class="btn">Website Development</a>
+        <a href="vinyl.html" class="btn secondary">Vinyl Branding</a>
       </div>
+      <a
+        href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20quote%20for%20my%20device.%20Can%20you%20help%20me%3F"
+        class="btn"
+        >Request a Quote</a
+      >
     </section>
 
-    <section class="section hidden" id="what-we-build">
-      <h2>What We Build</h2>
+    <section class="section hidden" id="services-overview">
+      <h2>Our Services</h2>
       <div class="divider"></div>
-      <div class="grid">
-        <div class="card">
-          <div class="card-icon">🏪</div>
-          <h3>Business Websites</h3>
+      <div class="service-grid">
+        <div class="service-card" data-icon="🖥️">
+          <h3>Laptop Repair</h3>
           <p>
-            Professional multi-page websites for local businesses. Services,
-            contact, booking — everything your customers need.
+            Fast local laptop repairs, diagnostics, battery replacement, screen
+            repair and performance upgrades.
           </p>
+          <a href="#services">Explore Repairs</a>
         </div>
-        <div class="card">
-          <div class="card-icon">🛒</div>
-          <h3>Online Stores</h3>
+        <div class="service-card" data-icon="🌐">
+          <h3>Website Development</h3>
           <p>
-            Sell your products online with a clean, fast store. Product
-            listings, WhatsApp checkout and more.
+            Modern business websites built mobile-first with WhatsApp contact,
+            SEO-ready pages and fast loading speed.
           </p>
+          <a href="webdev.html">View Website Service</a>
         </div>
-        <div class="card">
-          <div class="card-icon">📁</div>
-          <h3>Portfolio Sites</h3>
+        <div class="service-card" data-icon="✂️">
+          <h3>Vinyl Branding</h3>
           <p>
-            Showcase your work with a stunning portfolio. Perfect for
-            photographers, designers and creatives.
+            Custom stickers, decals, signage and heat transfer vinyl cut to
+            high-quality standards.
           </p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📱</div>
-          <h3>Mobile First</h3>
-          <p>
-            Every site we build looks perfect on phones, tablets and desktops.
-            Most of your customers are on mobile.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>Fast & Modern</h3>
-          <p>
-            Clean code, fast load times and modern design. No outdated templates
-            — everything built fresh.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔧</div>
-          <h3>Easy to Update</h3>
-          <p>
-            Update your content without touching code. We set you up so you stay
-            in control.
-          </p>
+          <a href="vinyl.html">View Vinyl Service</a>
         </div>
       </div>
     </section>
@@ -807,225 +1164,463 @@
       <h2>Our Process</h2>
       <div class="divider"></div>
       <div class="grid">
-        <div class="card">
-          <div class="card-icon">🗓️</div>
-          <h3>Consultation</h3>
-          <p>
-            We discuss your goals, budget and timeline so your website starts
-            strong.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🎨</div>
-          <h3>Design Mockup</h3>
-          <p>
-            You review a custom design draft before we build the final site.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💻</div>
-          <h3>Development</h3>
-          <p>
-            We build a polished website focused on speed, mobile and usability.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🚀</div>
-          <h3>Launch</h3>
-          <p>We publish your site and make sure everything works perfectly.</p>
+        <div class="card" data-icon="📝">Request Quote</div>
+        <div class="card" data-icon="🔍">Diagnosis</div>
+        <div class="card" data-icon="⚙️">Repair & Upgrade</div>
+        <div class="card" data-icon="📦">Pickup / Delivery</div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="services">
+      <h2>Repairs</h2>
+      <div class="divider"></div>
+      <div class="grid">
+        <div class="card" data-icon="🖥️">Screen Replacement</div>
+        <div class="card" data-icon="🔋">Battery Replacement</div>
+        <div class="card" data-icon="⌨️">Keyboard Repair</div>
+        <div class="card" data-icon="🔌">Charging Port Repair</div>
+        <div class="card" data-icon="❄️">Thermal Cleaning</div>
+        <div class="card" data-icon="🧠">Motherboard Diagnostics</div>
+      </div>
+    </section>
+
+    <section class="section hidden">
+      <div class="grid">
+        <div class="card" data-icon="🛡️">✔ Trusted Local Service</div>
+        <div class="card" data-icon="🔧">✔ Quality Parts Used</div>
+        <div class="card" data-icon="⚡">✔ Fast Response</div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="upgrades">
+      <h2>Performance Upgrades</h2>
+      <div class="divider"></div>
+      <div class="grid">
+        <div class="card" data-icon="💾">SSD Installation</div>
+        <div class="card" data-icon="🧠">RAM Upgrades</div>
+        <div class="card" data-icon="🌬️">Cooling Improvements</div>
+        <div class="card" data-icon="♻️">Refurbished Builds</div>
+        <div class="card" data-icon="🛠️">Hardware Replacement</div>
+        <div class="card" data-icon="⚡">Performance Tuning</div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         REFURBISHED LAPTOPS — POWERED BY GOOGLE SHEETS
+         
+         HOW TO ADD/REMOVE LAPTOPS:
+         1. Open your Google Sheet (see setup instructions below)
+         2. Add or delete rows — changes go live within minutes
+         3. No code editing needed!
+         ============================================= -->
+    <section class="section hidden" id="products">
+      <h2>Products</h2>
+      <div class="divider"></div>
+
+      <!-- This div is populated automatically from your Google Sheet -->
+      <div id="laptops-container">
+        <div class="laptops-status">
+          <div class="spinner"></div>
+          <p>Loading available stock...</p>
         </div>
       </div>
     </section>
 
-    <section class="section hidden" id="packages">
-      <h2>Packages</h2>
+    <section class="section hidden">
+      <h2>Why Customers Choose Us</h2>
       <div class="divider"></div>
-      <div class="packages">
-        <div class="package">
-          <h3>Starter</h3>
-          <ul>
-            <li>Single page website</li>
-            <li>Mobile responsive</li>
-            <li>Contact / WhatsApp button</li>
-            <li>Basic SEO setup</li>
-            <li>1 revision included</li>
-          </ul>
-          <a
-            href="https://wa.me/27749691205?text=Hi! I'm interested in the Starter website package."
-            target="_blank"
-            >Get Started</a
+      <div class="grid">
+        <div class="card">✔ Honest Pricing</div>
+        <div class="card">✔ Quality Parts</div>
+        <div class="card">✔ Experienced Repairs</div>
+        <div class="card">✔ Fast Response on WhatsApp</div>
+      </div>
+    </section>
+
+    <section class="section hidden">
+      <h2>How It Works</h2>
+      <div class="grid">
+        <div class="card" data-icon="📩">1. Send us your issue</div>
+        <div class="card" data-icon="💬">2. Get a quote</div>
+        <div class="card" data-icon="📦">3. Bring in your laptop</div>
+        <div class="card" data-icon="✅">4. We fix or upgrade it</div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="booking">
+      <h2>Book a Repair</h2>
+      <div class="divider"></div>
+      <p style="text-align: center; color: #94a3b8">
+        Fill this in and we'll respond on WhatsApp within minutes.
+      </p>
+      <form id="bookingForm" class="booking-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="name" placeholder="John Smith" required />
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="text" id="phone" placeholder="074 000 0000" required />
+        </div>
+        <div class="form-group">
+          <label>Select Service</label>
+          <select id="service">
+            <option>Screen Repair</option>
+            <option>Battery Replacement</option>
+            <option>SSD Upgrade (Speed Boost)</option>
+            <option>RAM Upgrade</option>
+            <option>Charging Port Repair</option>
+            <option>Overheating / Fan Issue</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Laptop Brand (Optional)</label>
+          <input type="text" id="brand" placeholder="Dell, HP, Lenovo..." />
+        </div>
+        <div class="form-group">
+          <label>Describe the Issue</label>
+          <textarea
+            id="message"
+            placeholder="e.g. Laptop is very slow, takes long to start..."
+          ></textarea>
+        </div>
+        <button type="submit" class="btn">📲 Book via WhatsApp</button>
+      </form>
+    </section>
+
+    <section class="section hidden contact" id="contact">
+      <h2>Contact</h2>
+      <div class="divider"></div>
+
+      <!-- WHY CHOOSE US -->
+      <div class="grid" style="margin-bottom: 50px">
+        <div class="card" style="text-align: center">
+          <div style="font-size: 2rem; margin-bottom: 10px">⚡</div>
+          <h3 style="color: #3b82f6; margin-bottom: 8px">Same-Day Service</h3>
+          <p style="color: #94a3b8; font-size: 0.9rem">
+            Fast repairs when you need them most. No long waits.
+          </p>
+        </div>
+        <div class="card" style="text-align: center">
+          <div style="font-size: 2rem; margin-bottom: 10px">🛡️</div>
+          <h3 style="color: #3b82f6; margin-bottom: 8px">Quality Parts</h3>
+          <p style="color: #94a3b8; font-size: 0.9rem">
+            We only use high-quality, trusted components on every repair.
+          </p>
+        </div>
+        <div class="card" style="text-align: center">
+          <div style="font-size: 2rem; margin-bottom: 10px">💰</div>
+          <h3 style="color: #3b82f6; margin-bottom: 8px">Fair Pricing</h3>
+          <p style="color: #94a3b8; font-size: 0.9rem">
+            Honest quotes with no hidden costs. Ever.
+          </p>
+        </div>
+        <div class="card" style="text-align: center">
+          <div style="font-size: 2rem; margin-bottom: 10px">📲</div>
+          <h3 style="color: #3b82f6; margin-bottom: 8px">Fast Response</h3>
+          <p style="color: #94a3b8; font-size: 0.9rem">
+            WhatsApp us and get a reply within minutes.
+          </p>
+        </div>
+      </div>
+
+      <!-- OPENING HOURS + CONTACT -->
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 25px;
+          margin-bottom: 50px;
+        "
+      >
+        <div class="card" style="text-align: center">
+          <h3
+            style="
+              color: #3b82f6;
+              margin-bottom: 20px;
+              font-family: &quot;Orbitron&quot;;
+            "
           >
+            🕒 Hours
+          </h3>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 10px;
+            "
+          >
+            <span style="color: #94a3b8">Monday – Friday</span>
+            <span style="color: #e2e8f0; font-weight: 600">9:00 – 18:00</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 10px;
+            "
+          >
+            <span style="color: #94a3b8">Saturday</span>
+            <span style="color: #e2e8f0; font-weight: 600">9:00 – 18:00</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 20px;
+            "
+          >
+            <span style="color: #94a3b8">Sunday</span>
+            <span style="color: #e2e8f0; font-weight: 600">9:00 – 18:00</span>
+          </div>
+          <div
+            style="
+              height: 1px;
+              background: linear-gradient(
+                to right,
+                transparent,
+                #3b82f6,
+                transparent
+              );
+              margin-bottom: 20px;
+            "
+          ></div>
+          <p style="color: #94a3b8; font-size: 0.85rem">
+            📍Robertsham, Johannesburg
+          </p>
+          <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 8px">
+            📞 074 969 1205
+          </p>
+          <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 8px">
+            📧 KasTech06@gmail.com
+          </p>
         </div>
 
-        <div class="package featured">
-          <h3>Business</h3>
-          <ul>
-            <li>Up to 5 pages</li>
-            <li>Mobile responsive</li>
-            <li>WhatsApp booking system</li>
-            <li>Google Maps integration</li>
-            <li>SEO optimised</li>
-            <li>3 revisions included</li>
-            <li>1 month free support</li>
-          </ul>
-          <a
-            href="https://wa.me/27749691205?text=Hi! I'm interested in the Business website package."
-            target="_blank"
-            >Get Started</a
+        <!-- SOCIAL MEDIA -->
+        <div class="card" style="text-align: center">
+          <h3
+            style="
+              color: #3b82f6;
+              margin-bottom: 20px;
+              font-family: &quot;Orbitron&quot;;
+            "
           >
-        </div>
+            📱 Follow Us
+          </h3>
+          <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 25px">
+            Stay updated with tips, deals and behind the scenes content.
+          </p>
 
-        <div class="package">
-          <h3>Custom</h3>
-          <ul>
-            <li>Unlimited pages</li>
-            <li>Online store / products</li>
-            <li>Custom features & tools</li>
-            <li>Admin dashboard</li>
-            <li>Full SEO setup</li>
-            <li>Unlimited revisions</li>
-            <li>3 months free support</li>
-          </ul>
           <a
-            href="https://wa.me/27749691205?text=Hi! I'm interested in a custom website. Can we chat?"
+            href="https://www.tiktok.com/@kastech_sa"
             target="_blank"
-            >Let's Talk</a
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              padding: 12px 18px;
+              border-radius: 8px;
+              margin-bottom: 14px;
+              background: rgba(0, 0, 0, 0.4);
+              border: 1px solid #333;
+              text-decoration: none;
+              transition: 0.3s;
+            "
+            onmouseover="this.style.borderColor = '#3b82f6'"
+            onmouseout="this.style.borderColor = '#333'"
           >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"
+              />
+            </svg>
+            <div style="text-align: left">
+              <div style="color: white; font-weight: 600; font-size: 0.85rem">
+                TikTok
+              </div>
+              <div style="color: #64748b; font-size: 0.75rem">@kastech_sa</div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.instagram.com/kastech_sa"
+            target="_blank"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              padding: 12px 18px;
+              border-radius: 8px;
+              background: rgba(0, 0, 0, 0.4);
+              border: 1px solid #333;
+              text-decoration: none;
+              transition: 0.3s;
+            "
+            onmouseover="this.style.borderColor = '#ef4444'"
+            onmouseout="this.style.borderColor = '#333'"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+            </svg>
+            <div style="text-align: left">
+              <div style="color: white; font-weight: 600; font-size: 0.85rem">
+                Instagram
+              </div>
+              <div style="color: #64748b; font-size: 0.75rem">@kastech_sa</div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section hidden" id="portfolio">
-      <h2>Recent Work</h2>
+    <!-- OTHER SERVICES -->
+    <section class="section hidden" id="other-services">
+      <h2>Our Other Services</h2>
       <div class="divider"></div>
-      <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <h3>Local Business Website</h3>
-          <p>
-            Modern landing pages with service details, contact buttons and
-            WhatsApp checkout ready for small businesses.
-          </p>
-          <span>Fast launch-ready site</span>
-        </div>
-        <div class="portfolio-card">
-          <h3>Online Store</h3>
-          <p>
-            Simple product pages, catalog styling, and easy order capture
-            through WhatsApp or direct checkout.
-          </p>
-          <span>Perfect for local shops</span>
-        </div>
-        <div class="portfolio-card">
-          <h3>Portfolio & Branding</h3>
-          <p>
-            Clean portfolios for creators, artists and service providers that
-            show work clearly and build trust.
-          </p>
-          <span>Designed to convert</span>
-        </div>
-      </div>
-    </section>
+      <p style="text-align: center; color: #94a3b8; margin-bottom: 40px">
+        KasTech offers more than just laptop repair. Explore our other services
+        below.
+      </p>
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 25px;
+        "
+      >
+        <a href="webdev.html" style="text-decoration: none">
+          <div
+            class="card"
+            style="text-align: center; cursor: pointer; padding: 35px 25px"
+          >
+            <div style="font-size: 3rem; margin-bottom: 15px">💻</div>
+            <h3
+              style="
+                font-family: &quot;Orbitron&quot;;
+                color: #3b82f6;
+                margin-bottom: 10px;
+                font-size: 1rem;
+              "
+            >
+              Website Development
+            </h3>
+            <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 15px">
+              Professional websites for businesses, portfolios and online
+              stores. Built to impress.
+            </p>
+            <span
+              style="
+                display: inline-block;
+                padding: 8px 20px;
+                background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+                color: white;
+                border-radius: 6px;
+                font-size: 0.8rem;
+                font-weight: bold;
+              "
+              >View Service →</span
+            >
+          </div>
+        </a>
 
-    <section class="section hidden" id="contact">
-      <h2>Ready to get started?</h2>
-      <div class="divider"></div>
-      <div style="text-align: center">
-        <p
-          style="
-            color: #94a3b8;
-            margin-bottom: 30px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-          "
-        >
-          WhatsApp us with your idea and we'll give you a free quote within the
-          day. No commitment required.
-        </p>
-        <a
-          href="https://wa.me/27749691205?text=Hi KasTech! I need a website for my business. Can we chat?"
-          class="btn"
-          target="_blank"
-          >📲 WhatsApp for Free Quote</a
-        >
-        <p style="color: #475569; font-size: 0.8rem; margin-top: 20px">
-          📧 KasTech06@gmail.com &nbsp;|&nbsp; 📞 074 969 1205
-        </p>
+        <a href="vinyl.html" style="text-decoration: none">
+          <div
+            class="card"
+            style="text-align: center; cursor: pointer; padding: 35px 25px"
+          >
+            <div style="font-size: 3rem; margin-bottom: 15px">✂️</div>
+            <h3
+              style="
+                font-family: &quot;Orbitron&quot;;
+                color: #ef4444;
+                margin-bottom: 10px;
+                font-size: 1rem;
+              "
+            >
+              Vinyl Branding
+            </h3>
+            <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 15px">
+              Custom stickers, decals, signage and branding. Any design, any
+              size, cut to perfection.
+            </p>
+            <span
+              style="
+                display: inline-block;
+                padding: 8px 20px;
+                background: linear-gradient(90deg, #ef4444, #b91c1c);
+                color: white;
+                border-radius: 6px;
+                font-size: 0.8rem;
+                font-weight: bold;
+              "
+              >View Service →</span
+            >
+          </div>
+        </a>
       </div>
     </section>
 
     <footer class="site-footer hidden">
-      <p>
-        KasTech Website Development — fast, mobile-friendly and easy to update.
-      </p>
+      <p>KasTech — Laptop Repair, Web Development & Vinyl Branding.</p>
       <p>
         Contact: <a href="tel:0749691205">074 969 1205</a> •
         <a href="mailto:KasTech06@gmail.com">KasTech06@gmail.com</a> •
         <a
-          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20website%20quote.%20Can%20you%20help%20me%3F"
+          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20quote%20for%20my%20device.%20Can%20you%20help%20me%3F"
           >WhatsApp</a
         >
       </p>
     </footer>
 
     <a
-      href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20website%20quote.%20Can%20you%20help%20me%3F"
+      href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20quote%20for%20my%20device.%20Can%20you%20help%20me%3F"
       class="whatsapp"
-      target="_blank"
       >Chat on WhatsApp</a
     >
 
+    <!-- Request a Quote floating button -->
     <a href="#" class="quote-btn" id="open-quote">Request a Quote</a>
 
-    <div class="fab" id="fab" aria-expanded="false">
-      <button
-        class="fab-button"
-        id="fab-toggle"
-        aria-label="Open contact actions"
-      >
-        K
-      </button>
-      <div class="fab-options" id="fab-options" aria-hidden="true">
-        <a
-          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20website%20quote.%20Can%20you%20help%20me%3F"
-          target="_blank"
-          class="fab-option"
-        >
-          <span class="icon">💬</span>
-          WhatsApp
-        </a>
-        <a href="#" class="fab-option" id="fab-quote">
-          <span class="icon">📝</span>
-          Quote
-        </a>
-      </div>
-    </div>
-
+    <!-- Quote Modal -->
     <div id="quote-modal" class="modal" aria-hidden="true">
       <div class="modal-content">
         <button class="modal-close" id="close-quote">×</button>
         <h3>Request a Quote</h3>
         <form id="quote-form" action="#" method="POST">
           <div class="form-group">
-            <label>Name</label><input name="name" required />
+            <label>Name</label>
+            <input type="text" name="name" required />
           </div>
           <div class="form-group">
-            <label>Email</label><input type="email" name="email" required />
+            <label>Email</label>
+            <input type="email" name="email" required />
           </div>
           <div class="form-group">
-            <label>Phone / WhatsApp</label><input name="phone" />
+            <label>Phone / WhatsApp</label>
+            <input type="tel" name="phone" />
           </div>
           <div class="form-group">
-            <label>Service</label
-            ><select name="service">
+            <label>Service</label>
+            <select name="service">
+              <option>General Quote</option>
+              <option>Laptop Repair</option>
               <option>Website Development</option>
-              <option>Online Store</option>
-              <option>Maintenance</option>
+              <option>Vinyl Branding</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Message</label><textarea name="message" required></textarea>
+            <label>Message</label>
+            <textarea name="message" required></textarea>
           </div>
           <input
             type="hidden"
@@ -1041,26 +1636,213 @@
       </div>
     </div>
 
-    <div class="mobile-cta">
-      <a href="https://wa.me/27749691205?text=Hi! I need a website.">
-        Get Quote</a
+    <div class="fab" id="fab" aria-expanded="false">
+      <button
+        class="fab-button"
+        id="fab-toggle"
+        aria-label="Open contact actions"
       >
+        K
+      </button>
+      <div class="fab-options" id="fab-options" aria-hidden="true">
+        <a
+          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20quote%20for%20my%20device.%20Can%20you%20help%20me%3F"
+          target="_blank"
+          class="fab-option"
+        >
+          <span class="icon">💬</span>
+          WhatsApp
+        </a>
+        <a href="#" class="fab-option" id="fab-quote">
+          <span class="icon">📝</span>
+          Quote
+        </a>
+      </div>
+    </div>
+
+    <!-- =============================================
+         GOOGLE SHEETS LAPTOP LOADER
+         
+         SETUP (one-time, takes ~5 minutes):
+         
+         STEP 1 — Create your Google Sheet with these exact column headers in Row 1:
+                   Name | Specs | Price | Condition | Badge
+         
+                   Example row:
+                   Dell Latitude E7470 | Intel i5 | 256GB SSD | 8GB RAM | R3,499 | Good | HOT DEAL
+         
+                   - Name:      Laptop name e.g. "Dell Latitude E7470"
+                   - Specs:     Short specs e.g. "Intel i5 | 256GB SSD | 8GB RAM"
+                   - Price:     e.g. "R3,499"
+                   - Condition: e.g. "Good", "Excellent", "Like New"
+                   - Badge:     Optional label e.g. "HOT DEAL", "SOLD OUT", leave blank for none
+         
+         STEP 2 — Publish your sheet as CSV:
+                   File → Share → Publish to web
+                   → Select "Sheet1" and "Comma-separated values (.csv)"
+                   → Click Publish → Copy the URL
+         
+         STEP 3 — Paste the URL below where it says PASTE_YOUR_URL_HERE
+         ============================================= -->
+    <script>
+      const APPS_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbwIO-cuFTIvuEolylbc2TWoBQYsdYSmdBfbunBQYpYuiqhxlP68dAcV_qe8yFD1U0di/exec";
+
+      async function loadLaptops() {
+        const container = document.getElementById("laptops-container");
+        try {
+          const response = await fetch(APPS_SCRIPT_URL);
+          if (!response.ok) throw new Error("Could not load products");
+
+          const laptops = await response.json();
+
+          if (!laptops.length) {
+            container.innerHTML = `<div class="laptops-status"><p>New stock arriving soon. Please check back later!</p></div>`;
+            return;
+          }
+
+          const grid = document.createElement("div");
+          grid.className = "product-grid";
+
+          laptops.forEach((item) => {
+            const name = (item.Name || "").trim();
+            const specs = (item.Specs || "").trim();
+            const price = (item.Price || "").trim();
+            const condition = (item.Condition || "").trim();
+            const badge = (item.Badge || "").trim();
+            const image = (item.Image || "").trim();
+            if (!name) return;
+
+            const waMessage = encodeURIComponent(
+              `Hi KasTech! I'm interested in the ${name} listed on your website (${price}). Is it still available?`,
+            );
+            const waLink = `https://wa.me/27749691205?text=${waMessage}`;
+
+            const card = document.createElement("div");
+            card.className = "product-card";
+            card.innerHTML = `
+              ${badge ? `<span class="badge">${badge}</span>` : ""}
+              ${image ? `<img src="${image}" alt="${name}" class="product-img" onerror="this.style.display='none'" />` : ""}
+              <h3>${name}</h3>
+              <p class="specs">${specs.replace(/\|/g, "<br>")}</p>
+              ${condition ? `<span class="condition">${condition}</span>` : ""}
+              <div class="price">${price}</div>
+              <a href="${waLink}" target="_blank" class="enquire-btn">💬 Enquire on WhatsApp</a>
+            `;
+            grid.appendChild(card);
+          });
+
+          container.innerHTML = "";
+          container.appendChild(grid);
+        } catch (err) {
+          console.error("KasTech Products:", err);
+          container.innerHTML = `<div class="laptops-status"><p>New stock arriving soon. Please check back later!</p></div>`;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", loadLaptops);
+    </script>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      });
+      document
+        .querySelectorAll(".hidden")
+        .forEach((el) => observer.observe(el));
+    </script>
+
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.getElementById("loader").style.display = "none";
+        }, 4000);
+      });
+    </script>
+
+    <script>
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          let name = document.getElementById("name").value;
+          let phone = document.getElementById("phone").value;
+          let service = document.getElementById("service").value;
+          let brand = document.getElementById("brand").value;
+          let message = document.getElementById("message").value;
+
+          let text = `New Booking:%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ABrand: ${brand}%0AIssue: ${message}`;
+          window.open(`https://wa.me/27749691205?text=${text}`, "_blank");
+        });
+    </script>
+
+    <div class="mobile-cta">
+      <a href="#booking">Book Now</a>
       <a href="tel:0749691205">Call</a>
     </div>
 
     <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) e.target.classList.add("show");
+      function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        const hamburger = document.querySelector(".hamburger");
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      }
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.querySelector(".nav-links").classList.remove("active");
+          document.querySelector(".hamburger").classList.remove("active");
         });
       });
 
+      window.addEventListener("scroll", () => {
+        const scroll = document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        document.getElementById("progress").style.width =
+          (scroll / height) * 100 + "%";
+      });
+    </script>
+
+    <script>
+      document.addEventListener("mousemove", (e) => {
+        let x = (window.innerWidth / 2 - e.pageX) / 40;
+        let y = (window.innerHeight / 2 - e.pageY) / 40;
+        document.querySelector(".hero h2").style.transform =
+          `translate(${x}px, ${y}px)`;
+        document.querySelector(".hero p").style.transform =
+          `translate(${x}px, ${y}px)`;
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 40 },
+          color: { value: ["#3b82f6", "#ef4444"] },
+          shape: { type: "circle" },
+          opacity: { value: 0.3 },
+          size: { value: 3 },
+          move: { enable: true, speed: 1 },
+        },
+      });
+    </script>
+    <script>
+      // Quote modal behaviour
       (function () {
         const open = document.getElementById("open-quote");
         const modal = document.getElementById("quote-modal");
         const close = document.getElementById("close-quote");
         const form = document.getElementById("quote-form");
         const result = document.getElementById("quote-result");
+
         function show(v) {
           modal.setAttribute("aria-hidden", String(!v));
         }
@@ -1072,6 +1854,7 @@
         modal.addEventListener("click", (e) => {
           if (e.target === modal) show(false);
         });
+
         form.addEventListener("submit", function (e) {
           e.preventDefault();
           const name = form.querySelector('[name="name"]').value.trim();
@@ -1080,7 +1863,7 @@
           const service = form.querySelector('[name="service"]').value.trim();
           const message = form.querySelector('[name="message"]').value.trim();
 
-          const text = `Hi KasTech! I would like a website quote.
+          const text = `Hi KasTech! I would like a quote.
 Name: ${name}
 Email: ${email}
 Phone: ${phone}
@@ -1095,46 +1878,9 @@ Message: ${message}`;
           form.reset();
         });
       })();
-      document
-        .querySelectorAll(".hidden")
-        .forEach((el) => observer.observe(el));
-
-      window.addEventListener("scroll", () => {
-        const scroll = document.documentElement.scrollTop;
-        const height =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
-        document.getElementById("progress").style.width =
-          (scroll / height) * 100 + "%";
-      });
-
-      function toggleMenu() {
-        document.querySelector(".nav-links").classList.toggle("active");
-        document.querySelector(".hamburger").classList.toggle("active");
-      }
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => {
-          document.querySelector(".nav-links").classList.remove("active");
-          document.querySelector(".hamburger").classList.remove("active");
-        });
-      });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-      particlesJS("particles-js", {
-        particles: {
-          number: { value: 40 },
-          color: { value: ["#3b82f6", "#1d4ed8"] },
-          shape: { type: "circle" },
-          opacity: { value: 0.3 },
-          size: { value: 3 },
-          move: { enable: true, speed: 1 },
-        },
-      });
     </script>
     <script>
-      // Mobile FAB behaviour (webdev)
+      // Mobile FAB behaviour
       (function () {
         const fab = document.getElementById("fab");
         const toggle = document.getElementById("fab-toggle");
@@ -1156,11 +1902,13 @@ Message: ${message}`;
           options && options.setAttribute("aria-hidden", String(!isOpen));
         });
 
+        // close when tapping outside or when scrolling
         document.addEventListener("click", function (e) {
           if (!fab.contains(e.target)) closeFab();
         });
         window.addEventListener("scroll", closeFab, { passive: true });
 
+        // wire the quote option to open the existing modal
         if (fabQuote) {
           fabQuote.addEventListener("click", function (e) {
             e.preventDefault();
