@@ -40,40 +40,20 @@
       }
 
       @keyframes pageFade {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
       @keyframes gradientMove {
-        0%,
-        100% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
       }
       @keyframes navFade {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
       @keyframes pulse {
-        0%,
-        100% {
-          box-shadow: 0 0 10px #25d366;
-        }
-        50% {
-          box-shadow: 0 0 25px #25d366;
-        }
+        0%, 100% { box-shadow: 0 0 10px #25d366; }
+        50% { box-shadow: 0 0 25px #25d366; }
       }
 
       #progress {
@@ -104,12 +84,8 @@
         filter: drop-shadow(0 0 10px #ef4444) drop-shadow(0 0 15px #3b82f6);
         transition: 0.3s;
       }
-      .logo:hover {
-        transform: scale(1.05);
-      }
-      .nav-links {
-        display: flex;
-      }
+      .logo:hover { transform: scale(1.05); }
+      .nav-links { display: flex; }
       .nav-links a {
         margin-left: 22px;
         text-decoration: none;
@@ -117,12 +93,8 @@
         transition: 0.3s;
         font-size: 0.9rem;
       }
-      .nav-links a:hover {
-        color: #ef4444;
-      }
-      .back-btn {
-        color: #ef4444 !important;
-      }
+      .nav-links a:hover { color: #ef4444; }
+      .back-btn { color: #ef4444 !important; }
 
       .hero {
         height: 100vh;
@@ -153,9 +125,7 @@
         text-shadow: 0 0 20px #ef4444;
         animation: floatIn 1.2s ease both;
       }
-      .hero h2 span {
-        color: #3b82f6;
-      }
+      .hero h2 span { color: #3b82f6; }
       .hero-subtitle {
         margin-top: 14px;
         color: #cbd5f5;
@@ -199,13 +169,7 @@
 
       .divider {
         height: 2px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          #ef4444,
-          #3b82f6,
-          transparent
-        );
+        background: linear-gradient(to right, transparent, #ef4444, #3b82f6, transparent);
         margin: 30px 0 40px;
       }
 
@@ -234,18 +198,14 @@
       .card:hover {
         transform: translateY(-10px) rotate(-0.35deg) scale(1.02);
         box-shadow: 0 18px 40px rgba(239, 68, 68, 0.18);
-        background-position:
-          padding-box,
-          100% 0;
+        background-position: padding-box, 100% 0;
       }
       .card-icon {
         font-size: 2.2rem;
         margin-bottom: 16px;
         transition: transform 0.3s ease;
       }
-      .card:hover .card-icon {
-        transform: translateY(-2px);
-      }
+      .card:hover .card-icon { transform: translateY(-2px); }
       .card h3 {
         font-family: "Orbitron";
         font-size: 0.9rem;
@@ -258,7 +218,6 @@
         line-height: 1.6;
       }
 
-      /* PACKAGES */
       .packages {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -339,9 +298,7 @@
         font-weight: bold;
         transition: 0.3s;
       }
-      .package a:hover {
-        transform: scale(1.05);
-      }
+      .package a:hover { transform: scale(1.05); }
 
       .portfolio-grid {
         display: grid;
@@ -358,37 +315,18 @@
       }
 
       @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(18px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-
       @keyframes floatIn {
-        from {
-          opacity: 0;
-          transform: translateY(-18px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(-18px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes popIn {
+        from { opacity: 0; transform: scale(0.96); }
+        to { opacity: 1; transform: scale(1); }
       }
 
-      @keyframes popIn {
-        from {
-          opacity: 0;
-          transform: scale(0.96);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
       .portfolio-card:hover {
         transform: translateY(-8px);
         border-color: #ef4444;
@@ -400,10 +338,7 @@
         margin-bottom: 12px;
         color: #e2e8f0;
       }
-      .portfolio-card p {
-        color: #94a3b8;
-        line-height: 1.7;
-      }
+      .portfolio-card p { color: #94a3b8; line-height: 1.7; }
       .portfolio-card span {
         display: inline-block;
         margin-top: 18px;
@@ -418,8 +353,7 @@
         text-align: center;
         margin-top: 40px;
       }
-      .site-footer p,
-      .site-footer a {
+      .site-footer p, .site-footer a {
         color: #94a3b8;
         font-size: 0.9rem;
       }
@@ -428,7 +362,6 @@
         text-decoration: none;
       }
 
-      /* USE CASES */
       .usecase-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -446,14 +379,8 @@
         border-color: #ef4444;
         transform: translateY(-5px);
       }
-      .usecase div {
-        font-size: 2rem;
-        margin-bottom: 8px;
-      }
-      .usecase p {
-        font-size: 0.75rem;
-        color: #94a3b8;
-      }
+      .usecase div { font-size: 2rem; margin-bottom: 8px; }
+      .usecase p { font-size: 0.75rem; color: #94a3b8; }
 
       .hidden {
         opacity: 0;
@@ -480,18 +407,10 @@
       }
 
       @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2rem;
-        }
-        .section {
-          padding: 60px 20px;
-        }
-        nav {
-          padding: 15px 20px;
-        }
-        .hamburger {
-          display: flex;
-        }
+        .hero h1 { font-size: 2rem; }
+        .section { padding: 60px 20px; }
+        nav { padding: 15px 20px; }
+        .hamburger { display: flex; }
         .nav-links {
           position: absolute;
           top: 100%;
@@ -516,9 +435,7 @@
           padding: 10px 0;
           border-bottom: 1px solid #1e293b;
         }
-        .mobile-cta {
-          display: block;
-        }
+        .mobile-cta { display: block; }
       }
 
       .mobile-cta {
@@ -549,16 +466,7 @@
         z-index: -1;
       }
     </style>
-    <!-- Cookie-free analytics (Plausible) - replace data-domain with your domain -->
-    <script
-      async
-      defer
-      data-domain="REPLACE_WITH_YOUR_DOMAIN"
-      src="https://plausible.io/js/plausible.js"
-    ></script>
-    <!-- Umami example (self-hosted):
-      <script async defer data-website-id="YOUR_UMAMI_SITE_ID" src="https://your-umami.example.com/umami.js"></script>
-    -->
+    <script async defer data-domain="REPLACE_WITH_YOUR_DOMAIN" src="https://plausible.io/js/plausible.js"></script>
   </head>
   <body>
     <div id="progress"></div>
@@ -586,7 +494,7 @@
         design, any size, delivered fast.
       </p>
       <a
-        href="https://wa.me/27749691205?text=Hi KasTech! I'm interested in Vinyl Branding. Can we chat?"
+        href="https://wa.me/27829295533?text=Hi KasTech! I'm interested in Vinyl Branding. Can we chat?"
         class="btn"
         >Get a Free Quote</a
       >
@@ -599,49 +507,32 @@
         <div class="card">
           <div class="card-icon">🏷️</div>
           <h3>Custom Stickers</h3>
-          <p>
-            Any shape, any size. Perfect for branding, packaging, giveaways or
-            just for fun.
-          </p>
+          <p>Any shape, any size. Perfect for branding, packaging, giveaways or just for fun.</p>
         </div>
         <div class="card">
           <div class="card-icon">🚗</div>
           <h3>Car Decals</h3>
-          <p>
-            Business branding, personal designs or window tinting cuts. Weather
-            resistant vinyl.
-          </p>
+          <p>Business branding, personal designs or window tinting cuts. Weather resistant vinyl.</p>
         </div>
         <div class="card">
           <div class="card-icon">🪟</div>
           <h3>Window & Wall Signage</h3>
-          <p>
-            Shop fronts, office windows, wall quotes. Clean professional finish
-            every time.
-          </p>
+          <p>Shop fronts, office windows, wall quotes. Clean professional finish every time.</p>
         </div>
         <div class="card">
           <div class="card-icon">👕</div>
           <h3>Heat Transfer Vinyl</h3>
-          <p>
-            Custom designs on t-shirts, hoodies and caps. Perfect for uniforms
-            or events.
-          </p>
+          <p>Custom designs on t-shirts, hoodies and caps. Perfect for uniforms or events.</p>
         </div>
         <div class="card">
           <div class="card-icon">📦</div>
           <h3>Product Labels</h3>
-          <p>
-            Professional labels for your products. Make your brand look premium.
-          </p>
+          <p>Professional labels for your products. Make your brand look premium.</p>
         </div>
         <div class="card">
           <div class="card-icon">🎨</div>
           <h3>Custom Designs</h3>
-          <p>
-            Got an idea but no design? We can create it for you. Just describe
-            what you need.
-          </p>
+          <p>Got an idea but no design? We can create it for you. Just describe what you need.</p>
         </div>
       </div>
     </section>
@@ -672,34 +563,13 @@
       <h2>Popular Use Cases</h2>
       <div class="divider"></div>
       <div class="usecase-grid">
-        <div class="usecase">
-          <div>🏪</div>
-          <p>Shop Signage</p>
-        </div>
-        <div class="usecase">
-          <div>🚘</div>
-          <p>Car Branding</p>
-        </div>
-        <div class="usecase">
-          <div>🎁</div>
-          <p>Gift Stickers</p>
-        </div>
-        <div class="usecase">
-          <div>👕</div>
-          <p>Clothing</p>
-        </div>
-        <div class="usecase">
-          <div>🏷️</div>
-          <p>Logo Decals</p>
-        </div>
-        <div class="usecase">
-          <div>🖼️</div>
-          <p>Wall Art</p>
-        </div>
-        <div class="usecase">
-          <div>🎉</div>
-          <p>Events</p>
-        </div>
+        <div class="usecase"><div>🏪</div><p>Shop Signage</p></div>
+        <div class="usecase"><div>🚘</div><p>Car Branding</p></div>
+        <div class="usecase"><div>🎁</div><p>Gift Stickers</p></div>
+        <div class="usecase"><div>👕</div><p>Clothing</p></div>
+        <div class="usecase"><div>🏷️</div><p>Logo Decals</p></div>
+        <div class="usecase"><div>🖼️</div><p>Wall Art</p></div>
+        <div class="usecase"><div>🎉</div><p>Events</p></div>
       </div>
     </section>
 
@@ -709,26 +579,17 @@
       <div class="portfolio-grid">
         <div class="portfolio-card">
           <h3>Custom Sticker Runs</h3>
-          <p>
-            High-quality sticker sets for promotions, branding and retail
-            packaging with crisp cuts and durable finish.
-          </p>
+          <p>High-quality sticker sets for promotions, branding and retail packaging with crisp cuts and durable finish.</p>
           <span>Perfect for giveaways</span>
         </div>
         <div class="portfolio-card">
           <h3>Vehicle Decals</h3>
-          <p>
-            Car, window and van decals designed for strong visibility and
-            long-lasting outdoor performance.
-          </p>
+          <p>Car, window and van decals designed for strong visibility and long-lasting outdoor performance.</p>
           <span>Brand vehicles with confidence</span>
         </div>
         <div class="portfolio-card">
           <h3>Heat Transfer Vinyl</h3>
-          <p>
-            Custom apparel designs for shirts, caps and uniforms with vibrant,
-            durable vinyl finish.
-          </p>
+          <p>Custom apparel designs for shirts, caps and uniforms with vibrant, durable vinyl finish.</p>
           <span>Ready for events and teams</span>
         </div>
       </div>
@@ -746,11 +607,7 @@
             <li>Standard finish</li>
             <li>Your design or simple text</li>
           </ul>
-          <a
-            href="https://wa.me/27749691205?text=Hi! I'm interested in a small vinyl cut."
-            target="_blank"
-            >Order Now</a
-          >
+          <a href="https://wa.me/27829295533?text=Hi! I'm interested in a small vinyl cut." target="_blank">Order Now</a>
         </div>
 
         <div class="package featured">
@@ -762,11 +619,7 @@
             <li>Custom design included</li>
             <li>Weather resistant</li>
           </ul>
-          <a
-            href="https://wa.me/27749691205?text=Hi! I'm interested in a standard vinyl cut."
-            target="_blank"
-            >Order Now</a
-          >
+          <a href="https://wa.me/27829295533?text=Hi! I'm interested in a standard vinyl cut." target="_blank">Order Now</a>
         </div>
 
         <div class="package">
@@ -779,11 +632,7 @@
             <li>Business branding packs</li>
             <li>Custom quote provided</li>
           </ul>
-          <a
-            href="https://wa.me/27749691205?text=Hi! I need a custom Vinyl Branding quote."
-            target="_blank"
-            >Get Quote</a
-          >
+          <a href="https://wa.me/27829295533?text=Hi! I need a custom Vinyl Branding quote." target="_blank">Get Quote</a>
         </div>
       </div>
     </section>
@@ -792,68 +641,46 @@
       <h2>Place Your Order</h2>
       <div class="divider"></div>
       <div style="text-align: center">
-        <p
-          style="
-            color: #94a3b8;
-            margin-bottom: 30px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-          "
-        >
-          Send us your design or idea on WhatsApp and we'll get back to you with
-          a quote within hours.
+        <p style="color: #94a3b8; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+          Send us your design or idea on WhatsApp and we'll get back to you with a quote within hours.
         </p>
         <a
-          href="https://wa.me/27749691205?text=Hi KasTech! I need Vinyl Branding. Here's what I need:"
+          href="https://wa.me/27829295533?text=Hi KasTech! I need Vinyl Branding. Here's what I need:"
           class="btn"
           target="_blank"
           >📲 WhatsApp Your Order</a
         >
         <p style="color: #475569; font-size: 0.8rem; margin-top: 20px">
-          📧 KasTech06@gmail.com &nbsp;|&nbsp; 📞 074 969 1205
+          📧 KasTech06@gmail.com &nbsp;|&nbsp; 📞 082 929 5533
         </p>
       </div>
     </section>
 
     <footer class="site-footer hidden">
+      <p>KasTech Vinyl Branding — custom stickers, decals, signage and apparel transfers.</p>
       <p>
-        KasTech Vinyl Branding — custom stickers, decals, signage and apparel
-        transfers.
-      </p>
-      <p>
-        Contact: <a href="tel:0749691205">074 969 1205</a> •
+        Contact: <a href="tel:0829295533">082 929 5533</a> •
         <a href="mailto:KasTech06@gmail.com">KasTech06@gmail.com</a> •
-        <a
-          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20a%20vinyl%20branding%20quote.%20Can%20you%20help%20me%3F"
-          >WhatsApp</a
-        >
+        <a href="https://wa.me/27829295533?text=Hi%20KasTech!%20I%20need%20a%20vinyl%20branding%20quote.%20Can%20you%20help%20me%3F">WhatsApp</a>
       </p>
     </footer>
     <div class="mobile-cta">
-      <a href="https://wa.me/27749691205?text=Hi! I need Vinyl Branding."
-        >Order Now</a
-      >
-      <a href="tel:0749691205">Call</a>
+      <a href="https://wa.me/27829295533?text=Hi! I need Vinyl Branding.">Order Now</a>
+      <a href="tel:0829295533">Call</a>
     </div>
+
     <script>
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) e.target.classList.add("show");
         });
       });
-      document
-        .querySelectorAll(".hidden")
-        .forEach((el) => observer.observe(el));
+      document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
 
       window.addEventListener("scroll", () => {
         const scroll = document.documentElement.scrollTop;
-        const height =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
-        document.getElementById("progress").style.width =
-          (scroll / height) * 100 + "%";
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById("progress").style.width = (scroll / height) * 100 + "%";
       });
 
       function toggleMenu() {
@@ -882,7 +709,6 @@
       });
     </script>
 
-    <!-- ── KasTech FAB ── -->
     <style>
       .kt-fab {
         position: fixed;
@@ -894,7 +720,6 @@
         align-items: flex-end;
         gap: 12px;
       }
-
       .kt-fab-options {
         display: flex;
         flex-direction: column;
@@ -905,13 +730,11 @@
         transform: translateY(12px) scale(0.97);
         transition: opacity 0.22s ease, transform 0.22s ease;
       }
-
       .kt-fab.open .kt-fab-options {
         pointer-events: auto;
         opacity: 1;
         transform: translateY(0) scale(1);
       }
-
       .kt-fab-option {
         display: inline-flex;
         align-items: center;
@@ -931,22 +754,15 @@
         transform: translateY(10px);
         transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       }
-
-      .kt-fab.open .kt-fab-option {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
+      .kt-fab.open .kt-fab-option { opacity: 1; transform: translateY(0); }
       .kt-fab.open .kt-fab-option:nth-child(1) { transition-delay: 0.04s; }
       .kt-fab.open .kt-fab-option:nth-child(2) { transition-delay: 0s; }
-
       .kt-fab-option:hover {
         transform: translateY(-2px) !important;
         border-color: #3b82f6;
         box-shadow: 0 10px 28px rgba(59,130,246,0.28);
         color: #fff;
       }
-
       .kt-fab-option .kf-icon {
         width: 28px;
         height: 28px;
@@ -958,7 +774,6 @@
         font-size: 0.85rem;
         flex-shrink: 0;
       }
-
       .kt-fab-toggle {
         width: 58px;
         height: 58px;
@@ -978,23 +793,19 @@
         flex-shrink: 0;
         animation: kt-fab-pulse 2.8s ease-in-out infinite;
       }
-
       .kt-fab-toggle:hover {
         transform: scale(1.1) !important;
         box-shadow: 0 10px 30px rgba(59,130,246,0.55), 0 5px 16px rgba(239,68,68,0.4);
       }
-
       .kt-fab.open .kt-fab-toggle {
         background: linear-gradient(135deg, #ef4444, #3b82f6);
         animation: none;
         transform: rotate(0deg);
       }
-
       @keyframes kt-fab-pulse {
         0%, 100% { box-shadow: 0 6px 22px rgba(59,130,246,0.45), 0 3px 12px rgba(239,68,68,0.3); }
         50%       { box-shadow: 0 8px 32px rgba(59,130,246,0.65), 0 4px 18px rgba(239,68,68,0.5); }
       }
-
       @media (max-width: 480px) {
         .kt-fab { bottom: 20px; right: 16px; }
         .kt-fab-toggle { width: 52px; height: 52px; font-size: 1.05rem; }
@@ -1004,29 +815,14 @@
 
     <div class="kt-fab" id="kt-fab">
       <div class="kt-fab-options" id="kt-fab-options">
-        <a
-          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20would%20like%20to%20request%20a%20quote.%20Can%20you%20help%20me%3F"
-          target="_blank"
-          class="kt-fab-option"
-        >
-          <span class="kf-icon">📋</span>
-          Request a Quote
+        <a href="https://wa.me/27829295533?text=Hi%20KasTech!%20I%20would%20like%20to%20request%20a%20quote.%20Can%20you%20help%20me%3F" target="_blank" class="kt-fab-option">
+          <span class="kf-icon">📋</span>Request a Quote
         </a>
-        <a
-          href="https://wa.me/27749691205?text=Hi%20KasTech!%20I%20need%20assistance.%20Can%20you%20help%20me%3F"
-          target="_blank"
-          class="kt-fab-option"
-        >
-          <span class="kf-icon">💬</span>
-          WhatsApp
+        <a href="https://wa.me/27829295533?text=Hi%20KasTech!%20I%20need%20assistance.%20Can%20you%20help%20me%3F" target="_blank" class="kt-fab-option">
+          <span class="kf-icon">💬</span>WhatsApp
         </a>
       </div>
-      <button
-        class="kt-fab-toggle"
-        id="kt-fab-toggle"
-        aria-label="Contact KasTech"
-        aria-expanded="false"
-      >K</button>
+      <button class="kt-fab-toggle" id="kt-fab-toggle" aria-label="Contact KasTech" aria-expanded="false">K</button>
     </div>
 
     <script>
@@ -1034,24 +830,20 @@
         var fab    = document.getElementById('kt-fab');
         var toggle = document.getElementById('kt-fab-toggle');
         if (!fab || !toggle) return;
-
         function closeFab() {
           fab.classList.remove('open');
           toggle.setAttribute('aria-expanded', 'false');
           toggle.textContent = 'K';
         }
-
         toggle.addEventListener('click', function (e) {
           e.stopPropagation();
           var isOpen = fab.classList.toggle('open');
           toggle.setAttribute('aria-expanded', String(isOpen));
           toggle.textContent = isOpen ? '✕' : 'K';
         });
-
         document.addEventListener('click', function (e) {
           if (!fab.contains(e.target)) closeFab();
         });
-
         window.addEventListener('scroll', closeFab, { passive: true });
       })();
     </script>
