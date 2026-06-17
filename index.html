@@ -373,146 +373,11 @@
         transform: translateY(-2px);
       }
 
-      /* =============================================
-         REFURBISHED LAPTOPS — GOOGLE SHEETS POWERED
-         ============================================= */
-
-      .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-        gap: 25px;
-        margin-top: 10px;
-      }
-
-      .product-card {
-        padding: 25px;
-        border-radius: 12px;
-        background: #020617;
-        border: 1px solid #1e293b;
-        text-align: center;
-        transition: 0.4s;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .product-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #3b82f6, #ef4444);
-      }
-
-      .product-card h3 {
-        font-family: "Orbitron";
-        font-size: 1rem;
-        margin-bottom: 10px;
-        color: #e2e8f0;
-      }
-
-      .product-card .specs {
-        color: #94a3b8;
-        font-size: 0.85rem;
-        margin-bottom: 12px;
-        line-height: 1.6;
-      }
-
-      .product-card .condition {
-        display: inline-block;
-        font-size: 0.75rem;
-        padding: 3px 10px;
-        border-radius: 20px;
-        margin-bottom: 12px;
-        background: rgba(59, 130, 246, 0.15);
-        border: 1px solid #3b82f6;
-        color: #3b82f6;
-      }
-
-      .product-card .price {
-        font-size: 1.5rem;
-        color: #ef4444;
-        margin: 10px 0;
-        font-weight: bold;
-        font-family: "Orbitron";
-      }
-
-      .product-card .badge {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        background: #ef4444;
-        color: white;
-        font-size: 0.7rem;
-        font-weight: bold;
-        padding: 3px 8px;
-        border-radius: 4px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .product-card .product-img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 12px;
-        border: 1px solid #1e293b;
-      }
-
-      .product-card .enquire-btn {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 20px;
-        background: linear-gradient(90deg, #3b82f6, #ef4444);
-        color: white;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 0.85rem;
-        transition: 0.3s;
-      }
-
-      .product-card .enquire-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 12px #3b82f6;
-      }
-
-      .product-card:hover {
-        transform: translateY(-10px) scale(1.03);
-        border-color: #3b82f6;
-        box-shadow:
-          0 0 15px #3b82f6,
-          0 0 25px #ef4444;
-      }
-
-      /* Loading & empty states */
-      .laptops-status {
-        text-align: center;
-        color: #94a3b8;
-        padding: 40px 0;
-      }
-
-      .laptops-status .spinner {
-        width: 36px;
-        height: 36px;
-        border: 3px solid #1e293b;
-        border-top-color: #3b82f6;
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-        margin: 0 auto 15px;
-      }
-
       @keyframes spin {
         to {
           transform: rotate(360deg);
         }
       }
-
-      /* ===================================
-         END REFURBISHED LAPTOPS SECTION
-         =================================== */
 
       /* DIVIDER */
       .divider {
@@ -907,7 +772,7 @@
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#upgrades">Upgrades</a>
-        <a href="#products">Products</a>
+        <a href="products.html">Products</a>
         <a href="webdev.html">Web Dev</a>
         <a href="vinyl.html">Vinyl Branding</a>
         <a href="#booking">Book Now</a>
@@ -1016,12 +881,61 @@
       <h2>Products</h2>
       <div class="divider"></div>
 
-      <div id="laptops-container">
-        <div class="laptops-status">
-          <div class="spinner"></div>
-          <p>Loading available stock...</p>
-        </div>
-      </div>
+      <a
+        href="products.html"
+        style="
+          display: block;
+          text-decoration: none;
+          border-radius: 16px;
+          padding: 50px 30px;
+          text-align: center;
+          background: #08101f;
+          border: 1px solid transparent;
+          background-image:
+            linear-gradient(#08101f, #08101f),
+            linear-gradient(90deg, #3b82f6, #ef4444, #3b82f6);
+          background-origin: padding-box, border-box;
+          background-clip: padding-box, border-box;
+          transition: 0.35s ease;
+        "
+        onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 18px 40px rgba(59,130,246,0.25)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+      >
+        <div style="font-size: 3rem; margin-bottom: 16px">🛒</div>
+        <h3
+          style="
+            font-family: 'Orbitron';
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            margin-bottom: 12px;
+          "
+        >
+          Browse Our Full Product Catalogue
+        </h3>
+        <p
+          style="
+            color: #94a3b8;
+            max-width: 500px;
+            margin: 0 auto 22px;
+            line-height: 1.7;
+          "
+        >
+          Laptop parts, upgrades, peripherals, networking gear and more.
+          Search, filter by category, and enquire instantly on WhatsApp.
+        </p>
+        <span
+          style="
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(90deg, #3b82f6, #ef4444);
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+          "
+          >View Products →</span
+        >
+      </a>
     </section>
 
     <section class="section hidden">
@@ -1375,65 +1289,6 @@
         >
       </p>
     </footer>
-
-    <script>
-      const APPS_SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbwIO-cuFTIvuEolylbc2TWoBQYsdYSmdBfbunBQYpYuiqhxlP68dAcV_qe8yFD1U0di/exec";
-
-      async function loadLaptops() {
-        const container = document.getElementById("laptops-container");
-        try {
-          const response = await fetch(APPS_SCRIPT_URL);
-          if (!response.ok) throw new Error("Could not load products");
-
-          const laptops = await response.json();
-
-          if (!laptops.length) {
-            container.innerHTML = `<div class="laptops-status"><p>New stock arriving soon. Please check back later!</p></div>`;
-            return;
-          }
-
-          const grid = document.createElement("div");
-          grid.className = "product-grid";
-
-          laptops.forEach((item) => {
-            const name = (item.Name || "").trim();
-            const specs = (item.Specs || "").trim();
-            const price = (item.Price || "").trim();
-            const condition = (item.Condition || "").trim();
-            const badge = (item.Badge || "").trim();
-            const image = (item.Image || "").trim();
-            if (!name) return;
-
-            const waMessage = encodeURIComponent(
-              `Hi KasTech! I'm interested in the ${name} listed on your website (${price}). Is it still available?`,
-            );
-            const waLink = `https://wa.me/27829295533?text=${waMessage}`;
-
-            const card = document.createElement("div");
-            card.className = "product-card";
-            card.innerHTML = `
-              ${badge ? `<span class="badge">${badge}</span>` : ""}
-              ${image ? `<img src="${image}" alt="${name}" class="product-img" onerror="this.style.display='none'" />` : ""}
-              <h3>${name}</h3>
-              <p class="specs">${specs.replace(/\|/g, "<br>")}</p>
-              ${condition ? `<span class="condition">${condition}</span>` : ""}
-              <div class="price">${price}</div>
-              <a href="${waLink}" target="_blank" class="enquire-btn">💬 Enquire on WhatsApp</a>
-            `;
-            grid.appendChild(card);
-          });
-
-          container.innerHTML = "";
-          container.appendChild(grid);
-        } catch (err) {
-          console.error("KasTech Products:", err);
-          container.innerHTML = `<div class="laptops-status"><p>New stock arriving soon. Please check back later!</p></div>`;
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", loadLaptops);
-    </script>
 
     <script>
       const observer = new IntersectionObserver((entries) => {
